@@ -182,13 +182,17 @@
                 </p>
 
             </h1>
+            <audio controls autoplay loop>
+                <source src="azu.mp3" type="audio/mp3">
+                <source src="azu.mp3" type="audio/mp3">
+            </audio>
         </div>
         <audio id="myAudio" autoplay loop src="azu.mp3"></audio>
     </div>
 
 </body>
 <script>
-    myAudio = new Audio('https://cdn.discordapp.com/attachments/735405122884206612/782878278594592798/ZUNDA_LAUGH.mp3');
+    myAudio = new Audio('azu.mp3');
     if (typeof myAudio.loop == 'boolean') {
         myAudio.loop = true;
     } else {
