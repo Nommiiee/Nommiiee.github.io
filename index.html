@@ -21,27 +21,15 @@
 
             </h1>
             <iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-            <audio class="bg-white p-10 w-10/12" controls autoplay loop>
-                <source src="azu.mp3" type="audio/mp3">
-             
-            </audio>
+            <audio id="player" autoplay loop>
+              <source src="azu.mp3" type="audio/mp3">  
+          </audio>
+
+       
         </div>
-        <audio controls autoplay loop class"mx-auto text-center p-2 w-full" src="azu.mp3"  id="myAudio"></audio>
+     
     </div>
 
 </body>
-<script>
-    myAudio = new Audio('azu.mp3');
-    if (typeof myAudio.loop == 'boolean') {
-        myAudio.loop = true;
-    } else {
-        myAudio.addEventListener('ended', function() {
-                this.currentTime = 0;
-                this.play();
-            },
-            false);
-    }
-    myAudio.play();
-</script>
 
 </html>
