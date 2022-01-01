@@ -30,10 +30,8 @@
      
     </div>
 <script>
-    document.addEventListener('click', musicPlay);
-function musicPlay() {
-    document.getElementById('player').play();
-    document.removeEventListener('click', musicPlay);
+  window.onload = function() {
+  var context = new AudioContext();
 }
     </script>
 </body>
