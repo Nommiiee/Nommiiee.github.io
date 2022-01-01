@@ -12,14 +12,9 @@
 <body class=" bg-black text-white">
     <div class="p-4 mx-auto h-full">
         <div class="h-full mx-auto">
-            <h1 class="text-4xl text-center w-10/12 mx-auto py-56
-            ">
-                <p class="rounded-2xl text-center mx-auto p-6">
+            <h1 class="text-4xl text-center w-10/12 mx-auto py-56">
 
-                    Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha
-                </p>
-
-
+                Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha
 
             </h1>
             <iframe src="azu.mp3" allow="autoplay" style="display:none" id="iframeAudio">
@@ -29,7 +24,7 @@
                 <source src="azu.mp3" type="audio/mp3">
             </audio>
         </div>
-        <audio id="myAudio" autoplay loop src="azu.mp3"></audio>
+        <audio id="myAudio" controls autoplay loop src="azu.mp3"></audio>
     </div>
 
 </body>
@@ -39,9 +34,10 @@
         myAudio.loop = true;
     } else {
         myAudio.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
+                this.currentTime = 0;
+                this.play();
+            },
+            false);
     }
     myAudio.play();
 </script>
