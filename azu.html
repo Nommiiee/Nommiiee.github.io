@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azunda Hehe</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class=" bg-black text-white">
+    <header class="w-full bg-black text-gray-100 p-2">
+        <div class="w-10/12 mx-auto flex justify-between">
+            <div class="p-2">
+                <div class="flex justify-evenly">
+                    <div class="my-auto">
+                        <a href="index.html">
+                            <img class="w-24" src="src/assets/img/noms_bar.gif" alt="">
+                        </a>
+                    </div>
+                    <div class="my-auto text-3xl font-sans font-bold text-orange-400 mx-8">
+                        <h1>
+                            Nom's Bar
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 my-auto flex justify-between space-x-3">
+                <div class="my-auto">
+                    <a href="staff.html">
+                        <button class="p-4 mx-8 font-semibold   text-orange-400 text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                            Members
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://discord.gg/fqpXWuwtDG">
+                        <button class="text-3xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
+                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+    <div class="p-4 mx-auto h-full">
+        <div class="h-full mx-auto">
+            <h1 class="text-4xl text-center w-10/12 mx-auto py-32">
+                Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha
+            </h1>
+            <iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="iframeAudio" style="display: none"></iframe>
+
+        </div>
+        <div class="mx-auto text-center  inline">
+            <audio controls autoplay loop id="playAudio" class="mx-auto">                 
+             <source src="azu.mp3">
+            </audio>
+
+        </div>
+        <div class="text-center mx-auto py-20">
+            <a href="/wynter.html">
+                <button class="text-3xl bg-white text-gray-700 p-4 rounded-lg text-center mx-auto">
+                    Wynter's Ara Ara 
+                </button>
+            </a>
+        </div>
+
+    </div>
+    <script>
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (!isChrome) {
+            $('#iframeAudio').remove()
+        } else {
+            $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+        }
+    </script>
+</body>
+
+</html>
