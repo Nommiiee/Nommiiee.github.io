@@ -8,17 +8,104 @@
     <meta http-equiv='pragma' content='no-cache'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yocchi</title>
+    <title>Wyn's Ara Ara</title>
     <link rel="stylesheet" href="src/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
 </head>
 
-<body class="bg-black">
-    <div class=" w-full">
-        <img class="my-40 mx-auto  block" src="src/assets/img/yocchi-link.jpg" alt="">
-    </div>
+<body class=" bg-black text-white">
+    <header class="w-full bg-black text-gray-100 p-2">
+        <header class="w-full bg-black text-gray-100 p-2">
+            <div class="w-10/12 mx-auto flex justify-between">
+                <div class="p-2">
+                    <a href="index.html">
+                        <div class="flex justify-evenly">
+
+                            <div class="my-auto">
+
+                                <img class="w-24" src="src/assets/img/noms_bar.gif" alt="">
+
+                            </div>
+                            <div class="my-auto text-2xl lg:text-3xl font-sans font-bold text-orange-400 mx-8">
+                                <h1>
+                                    Nom's Bar
+                                </h1>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:block p-2 my-auto ">
+                    <div class="flex justify-between">
+
+                        <div class="my-auto">
+                            <a href="members.html">
+                                <button class="p-4 mx-8 font-semibold   text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                                    Members
+                            </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://discord.gg/fqpXWuwtDG">
+                                <button class="text-3xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
+                                <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="p-4 mx-auto h-full">
+            <div class="h-full mx-auto">
+                <h1 class="text-4xl text-center w-10/12 mx-auto py-56">
+                    Ara Ara Ara Ara Ara Ara Ara Ara
+                    <br> Ara Ara Ara Ara Ara Ara Ara Ara
+                    <br> Ara Ara Ara Ara Ara Ara Ara Ara
+                </h1>
+                <div class=" md:hidden">
+                    <div class="mx-auto text-center w-48 py-8">
+                        <a href="index.html">
+                            <button class="p-4  font-semibold border-2  text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                        Home
+                        </button>
+                        </a>
+                    </div>
+                    <div class="flex justify-between">
+                        <div class="my-auto">
+                            <a href="members.html">
+                                <button class="p-4  font-semibold   text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                            Members
+                        </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://discord.gg/fqpXWuwtDG">
+                                <button class="text-3xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
+                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                        </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <iframe src="src/assets/audio/250-milliseconds-of-silence.mp3" allow="autoplay" id="iframeAudio" style="display: none"></iframe>
+
+            </div>
+            <div class="mx-auto text-center inline">
+                <audio controls autoplay loop id="playAudio" class="mx-auto">                 
+                 <source src="src/assets/audio/wyn.mp3">
+                </audio>
+
+            </div>
+
+        </div>
+        <script>
+            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+            if (!isChrome) {
+                $('#iframeAudio').remove()
+            } else {
+                $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+            }
+        </script>
 </body>
 
 </html>
