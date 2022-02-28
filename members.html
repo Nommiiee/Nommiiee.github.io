@@ -15,50 +15,67 @@
     <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
 </head>
 
-<body class="bg-gray-900 text-orange-400">
-    <header class="w-full bg-black text-gray-100 p-2">
-        <div class="w-10/12 mx-auto flex justify-between">
-            <div class="p-2">
-                <a href="index.html">
-                    <div class="flex justify-evenly">
-                        <div class="my-auto">
-                            <img class="w-20" src="src/assets/img/noms_bar.gif" alt="">
-                        </div>
-                        <div class="my-auto text-2xl lg:text-3xl font-sans font-bold text-orange-400 mx-8">
-                            <h1>
-                                Nom's Bar
-                            </h1>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="hidden md:block p-2 my-auto ">
-                <div class="flex justify-between">
-                    <div class="my-auto">
-                        <a href="members.html">
-                            <button class="p-4 mx-8 font-semibold   text-orange-400 text-xl lg:text-2xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                                Members
-                        </button>
-                        </a>
-                    </div>
-                    <div class="my-auto">
-                        <a href="facts.html">
-                            <button class="p-4 mx-8 font-semibold   text-orange-400 text-xl lg:text-2xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                                Facts
-                        </button>
-                        </a>
-                    </div>
-                    <div class="my-auto">
-                        <a href="https://discord.gg/fqpXWuwtDG">
-                            <button class="text-xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
-                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                        </button>
-                        </a>
-                    </div>
+<body class="bg-gray-900 text-orange-400 >
+        <nav class=" flex justify-between place-items-center w-11/12 mx-auto ">
+            <div class=" flex place-items-center">
+    <a href="index.html" class="flex place-items-center">
+        <div>
+            <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
+        </div>
+        <div class="text-2xl font-semibold hover:text-orange-500">
+            <span class="text-orange-500 hover:text-white">Nom's </span>Bar
+        </div>
+    </a>
+    </div>
+    <div class="hidden lg:block">
+        <ul class="flex flex-row justify-between place-items-center text-center text-3xl lg:text-2xl text-white ">
+            <li class="noms">
+                <a href="facts.html" class="hover:text-orange-500">Anime
+                    Quote</a>
+            </li>
+            <li class="mx-20">
+                <a href="members.html" class="hover:text-orange-500">Members</a>
+            </li>
+            <li class="">
+                <div class="">
+                    <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                        <img class="w-44" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div onclick="mobileNav()" class="lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </div>
+    </nav>
+    </header>
+    <nav class="bg-black z-50  h-screen hidden" id="mobileMenu">
+        <div class="p-8  ">
+            <div class="">
+                <div class="">
+                    <ul class="text-center text-3xl text-white space-y-10">
+                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
+                            <a href="facts.html">Anime Quote</a> Quote
+                        </li>
+                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
+                            <a href="members.html">Members</a>
+                        </li>
+                        <li class="border-b-2 border-white pb-2">
+                            <div class="">
+                                <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                                    <img class="w-64" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
+
 
     <div class="text-center mx-auto py-12">
         <h1 class="text-6xl font-bold ">
@@ -67,24 +84,26 @@
         <div class=" md:hidden">
             <div class="mx-auto text-center w-48 py-8">
                 <a href="index.html">
-                    <button class="p-4  font-semibold border-2  text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                    Home
+                    <button
+                        class="p-4  font-semibold border-2  text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                        Home
                     </button>
                 </a>
             </div>
             <div class="flex justify-between">
                 <div class="my-auto">
                     <a href="members.html">
-                        <button class="p-4  font-semibold   text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                        Members
-                    </button>
+                        <button
+                            class="p-4  font-semibold   text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
+                            Members
+                        </button>
                     </a>
                 </div>
                 <div>
                     <a href="https://discord.gg/fqpXWuwtDG">
                         <button class="text-3xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
-                        <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                    </button>
+                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                        </button>
                     </a>
                 </div>
             </div>
@@ -103,9 +122,9 @@
                     <p class="text-2xl">
                         NomNom
                         <br>
-                        <p class="text-xl py-2">
-                            The Gatto Lord
-                        </p>
+                    <p class="text-xl py-2">
+                        The Gatto Lord
+                    </p>
                     </p>
                     <p class="text-center text-lg py-6 font-semibold font-sans">
                         "I Love Gattos, Are You A Gatto?"
@@ -113,8 +132,9 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                          Gotcha' 
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Gotcha'
                         </button>
                     </a>
                 </div>
@@ -127,9 +147,9 @@
                     <p class="text-2xl">
                         Doom
                         <br>
-                        <p class="text-xl py-2">
-                            Adored & respected mod
-                        </p>
+                    <p class="text-xl py-2">
+                        Adored & respected mod
+                    </p>
                     </p>
                     <p class="text-center text-lg pt-5 pb-7 font-semibold font-sans">
                         "You're*"
@@ -137,7 +157,8 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=6IjuSycXjqM">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
                             Listen To Me
                         </button>
                     </a>
@@ -151,9 +172,9 @@
                     <p class="text-2xl">
                         Juix
                         <br>
-                        <p class="text-xl py-2">
-                            The Troublemaker
-                        </p>
+                    <p class="text-xl py-2">
+                        The Troublemaker
+                    </p>
                     </p>
                     <p class="text-center text-lg pt-5 pb-8 font-semibold font-sans">
                         "who needs lovers, all i need is my bed”
@@ -161,8 +182,9 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=3jWRrafhO7M&start=8529">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Enjoy :)
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Enjoy :)
                         </button>
                     </a>
                 </div>
@@ -175,9 +197,9 @@
                     <p class="text-2xl">
                         Devichi
                         <br>
-                        <p class="text-xl py-2">
-                            Just A Cute Girl
-                        </p>
+                    <p class="text-xl py-2">
+                        Just A Cute Girl
+                    </p>
                     </p>
                     <p class="text-center text-lg py-6 font-semibold font-sans">
                         "I am made of Cuteness~ ”
@@ -185,14 +207,16 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=eaqgtimmlJ4">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Some Cute Stuffs
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Some Cute Stuffs
                         </button>
                     </a>
                 </div>
             </div>
 
-            <div style="background-color: #9CA9B8;" class="rounded-lg border-2 p-4 w-80 border-whitehe text-gray-800 mt-10 mx-auto">
+            <div style="background-color: #9CA9B8;"
+                class="rounded-lg border-2 p-4 w-80 border-whitehe text-gray-800 mt-10 mx-auto">
                 <div class="">
                     <img class="mx-auto w-24  py-10" src="src/assets/img/wyn.png " alt=" ">
                 </div>
@@ -200,9 +224,9 @@
                     <p class="text-2xl">
                         WynWyn
                         <br>
-                        <p class="text-xl py-2">
-                            The cute blob mod
-                        </p>
+                    <p class="text-xl py-2">
+                        The cute blob mod
+                    </p>
                     </p>
                     <p class="text-center text-lg pt-2 pb-3 font-semibold font-sans">
                         “I think I'm gonna die the moment I enter the toilet…..”
@@ -210,7 +234,8 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="wynter.html">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
                             Listen To Me
                         </button>
                     </a>
@@ -224,9 +249,9 @@
                     <p class="text-2xl">
                         BaoBao
                         <br>
-                        <p class="text-xl py-2">
-                            Onee-Tama
-                        </p>
+                    <p class="text-xl py-2">
+                        Onee-Tama
+                    </p>
                     </p>
                     <p class="text-center text-lg pt-2 pb-3 font-semibold font-sans">
                         “im a nice neighborhood nee-chan”
@@ -234,7 +259,8 @@
                 </div>
                 <div class="text-center mx-auto ">
                     <a href="https://youtu.be/qa_c8-YQ2l4">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
                             Heh
                         </button>
                     </a>
@@ -248,9 +274,9 @@
                     <p class="text-2xl">
                         Kowa
                         <br>
-                        <p class="text-xl py-2">
-                            The Koala Mod
-                        </p>
+                    <p class="text-xl py-2">
+                        The Koala Mod
+                    </p>
                     </p>
                     <p class="text-center text-lg py-6 font-semibold font-sans">
                         “Cute Quote..”
@@ -258,13 +284,15 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=KId6eunoiWk">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Hehe~~    
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Hehe~~
                         </button>
                     </a>
                 </div>
             </div>
-            <div style="background-color: #DFF9FD;" class="rounded-lg border-2 p-4 w-80 border-white text-gray-700 mt-10 mx-auto">
+            <div style="background-color: #DFF9FD;"
+                class="rounded-lg border-2 p-4 w-80 border-white text-gray-700 mt-10 mx-auto">
                 <div class="">
                     <img class="mx-auto w-24 h-44  py-10" src="src/assets/img/floofy.png" alt=" ">
                 </div>
@@ -272,9 +300,9 @@
                     <p class="text-2xl">
                         Floofy
                         <br>
-                        <p class="text-xl py-2">
-                            The Bartender
-                        </p>
+                    <p class="text-xl py-2">
+                        The Bartender
+                    </p>
                     </p>
                     <p class="text-center text-lg py-6 font-semibold  font-sans">
                         "Go To Sleep"
@@ -282,8 +310,9 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                          My Fav
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            My Fav
                         </button>
                     </a>
                 </div>
@@ -296,9 +325,9 @@
                     <p class="text-2xl">
                         Kanna
                         <br>
-                        <p class="text-xl py-2">
-                            The Kanna
-                        </p>
+                    <p class="text-xl py-2">
+                        The Kanna
+                    </p>
                     </p>
                     <p class="text-center text-lg py-6 font-semibold font-sans">
                         "The Wholesome Mod”
@@ -306,8 +335,9 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="https://youtu.be/_BSSJi-sHh8">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Pats Are Nice  
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Pats Are Nice
                         </button>
                     </a>
                 </div>
@@ -320,9 +350,9 @@
                     <p class="text-2xl">
                         Bobbyshuffle
                         <br>
-                        <p class="text-xl py-2">
-                            The Teaser
-                        </p>
+                    <p class="text-xl py-2">
+                        The Teaser
+                    </p>
                     </p>
                     <p class="text-center text-lg pt-2 pb-3 font-semibold font-sans">
                         "Tease me? I'll make you fall for me if you did~”
@@ -330,8 +360,9 @@
                 </div>
                 <div class="text-center mx-auto">
                     <a href="bobby.html">
-                        <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Tease Me 
+                        <button
+                            class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            Tease Me
                         </button>
                     </a>
                 </div>
@@ -353,9 +384,9 @@
                         <p class="text-2xl">
                             Azunda
                             <br>
-                            <p class="text-xl py-2">
-                                Aussie Premium Cunt
-                            </p>
+                        <p class="text-xl py-2">
+                            Aussie Premium Cunt
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "Laugh Like A Maniac"
@@ -365,13 +396,15 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="azu.html">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                            Let's Laugh
-                        </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                Let's Laugh
+                            </button>
                         </a>
                     </div>
                 </div>
-                <div style="background-color: #5D3FD3;" class="rounded-lg border-2 p-4 w-80 border-white text-white mt-10 mx-auto ">
+                <div style="background-color: #5D3FD3;"
+                    class="rounded-lg border-2 p-4 w-80 border-white text-white mt-10 mx-auto ">
                     <div class="">
                         <img class="mx-auto w-24  py-10" src="src/assets/img/vapor.jpg" alt=" ">
                     </div>
@@ -379,9 +412,9 @@
                         <p class="text-2xl">
                             Vapor
                             <br>
-                            <p class="text-xl py-2">
-                                The Pirate
-                            </p>
+                        <p class="text-xl py-2">
+                            The Pirate
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "Cloudy days are my favourite"
@@ -391,9 +424,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://oceana.org/">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                            You Sure About This?
-                        </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                You Sure About This?
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -406,9 +440,9 @@
                         <p class="text-2xl">
                             Yocchi
                             <br>
-                            <p class="text-xl py-2">
-                                The Horny One
-                            </p>
+                        <p class="text-xl py-2">
+                            The Horny One
+                        </p>
                         </p>
                         <p class="text-center text-lg pt-2 pb-3 font-semibold font-sans">
                             "There is a price to pay to achieve anything"
@@ -416,9 +450,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="yocchi.html">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                            hehe XD
-                        </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                hehe XD
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -430,9 +465,9 @@
                         <p class="text-2xl">
                             Hana
                             <br>
-                            <p class="text-xl py-2">
-                                The Marshmallow
-                            </p>
+                        <p class="text-xl py-2">
+                            The Marshmallow
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "Can't Decide A Name"
@@ -440,9 +475,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://m.youtube.com/watch?v=Df_4SNsQVH4">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                        Some Music 
-                    </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                Some Music
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -454,9 +490,9 @@
                         <p class="text-2xl">
                             R, Lost R
                             <br>
-                            <p class="text-xl py-2">
-                                The Lost Wanderer
-                            </p>
+                        <p class="text-xl py-2">
+                            The Lost Wanderer
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "Being lost is an adventure"
@@ -466,9 +502,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://www.youtube.com/watch?feature=youtu.be&v=UxM5UgpXYM4&app=desktop">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
                                 Wandering
-                        </button>
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -480,9 +517,9 @@
                         <p class="text-2xl">
                             DwevDevv
                             <br>
-                            <p class="text-xl py-2">
-                                Most Superior
-                            </p>
+                        <p class="text-xl py-2">
+                            Most Superior
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "foxgirl fOXGIRL FOXGIRL"
@@ -492,9 +529,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://www.youtube.com/watch?v=S0L1cyGBuKI&ab_channel=Kanauru">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                            Click To Hug Me 
-                        </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                Click To Hug Me
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -506,9 +544,9 @@
                         <p class="text-2xl">
                             Shiro
                             <br>
-                            <p class="text-xl py-2">
-                                The Narcissist
-                            </p>
+                        <p class="text-xl py-2">
+                            The Narcissist
+                        </p>
                         </p>
                         <p class="text-center text-lg py-6 font-semibold font-sans">
                             "ZE SHIROOOO"
@@ -516,13 +554,15 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://c.tenor.com/7V_j-EkvLbYAAAAC/nogamenolife-sora.gif ">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
-                            Click To Pat Shiro
-                        </button>
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                                Click To Pat Shiro
+                            </button>
                         </a>
                     </div>
                 </div>
-                <div class="rounded-lg border-2 p-4 w-80 bg-gradient-to-tr bg-red-300 from-orange-300 border-white text-white mt-10 mx-auto ">
+                <div
+                    class="rounded-lg border-2 p-4 w-80 bg-gradient-to-tr bg-red-300 from-orange-300 border-white text-white mt-10 mx-auto ">
                     <div class="">
                         <img class="mx-auto w-24  py-10" src="src/assets/img/beetle1.png" alt=" ">
                     </div>
@@ -530,9 +570,9 @@
                         <p class="text-2xl">
                             Beetle
                             <br>
-                            <p class="text-xl py-2">
-                                Sleeper
-                            </p>
+                        <p class="text-xl py-2">
+                            Sleeper
+                        </p>
                         </p>
                         <p class="text-center text-lg pt-2 pb-4 font-semibold font-sans">
                             "Eyes blue like the Atlantic and I'm going down like the titanic "
@@ -540,9 +580,10 @@
                     </div>
                     <div class="text-center mx-auto">
                         <a href="https://youtu.be/xDFwqJ4F50U">
-                            <button class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
+                            <button
+                                class="text-white bg-gray-700 text-xl rounded-xl text-center w-10/12 font-serif fontsem p-2">
                                 Atlantic
-                        </button>
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -551,7 +592,13 @@
         </div>
     </div>
 
+    <script>
+        function mobileNav() {
 
+            let mobileMenu = document.getElementById('mobileMenu')
+            mobileMenu.classList.toggle('hidden')
+        }
+    </script>
     <script>
         var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
         if (!isChrome) {

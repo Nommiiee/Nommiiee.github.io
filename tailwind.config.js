@@ -1,7 +1,11 @@
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFmaily:{
+        noms: "'Crete Round', serif"
+      }
+    },
   },
   plugins: [],
 }

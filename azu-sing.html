@@ -13,103 +13,90 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class=" bg-black text-white">
-    <header class="w-full bg-black text-gray-100 p-2">
-        <div class="w-10/12 mx-auto flex justify-between">
-            <div class="p-2">
-                <a href="index.html">
-                    <div class="flex justify-evenly">
-                        <div class="my-auto">
-                            <img class="w-20" src="src/assets/img/noms_bar.gif" alt="">
-                        </div>
-                        <div class="my-auto text-2xl lg:text-3xl font-sans font-bold text-orange-400 mx-8">
-                            <h1>
-                                Nom's Bar
-                            </h1>
-                        </div>
+<body class="bg-gray-900 text-orange-400  relative">
+    <header class="w-full bg-black text-gray-50 p-4 ">
+        <nav class="flex justify-between place-items-center w-11/12 mx-auto ">
+            <div class="flex place-items-center">
+                <a href="index.html" class="flex place-items-center">
+                    <div>
+                        <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
+                    </div>
+                    <div class="text-2xl font-semibold hover:text-orange-500">
+                        <span class="text-orange-500 hover:text-white">Nom's </span>Bar
                     </div>
                 </a>
             </div>
-            <div class="hidden md:block p-2 my-auto ">
-                <div class="flex justify-between">
-                    <div class="my-auto">
-                        <a href="members.html">
-                            <button class="p-4 mx-8 font-semibold   text-orange-400 text-xl lg:text-2xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                                Members
-                        </button>
-                        </a>
-                    </div>
-                    <div class="my-auto">
-                        <a href="facts.html">
-                            <button class="p-4 mx-8 font-semibold   text-orange-400 text-xl lg:text-2xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                                Facts
-                        </button>
-                        </a>
-                    </div>
-                    <div class="my-auto">
-                        <a href="https://discord.gg/fqpXWuwtDG">
-                            <button class="text-xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
-                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                        </button>
-                        </a>
-                    </div>
+            <div class="hidden lg:block">
+                <ul
+                    class="flex flex-row justify-between place-items-center text-center text-3xl lg:text-2xl text-white ">
+                    <li class="noms">
+                        <a href="facts.html" class="hover:text-orange-500">Anime
+                            Quote</a>
+                    </li>
+                    <li class="mx-20">
+                        <a href="members.html" class="hover:text-orange-500">Members</a>
+                    </li>
+                    <li class="">
+                        <div class="">
+                            <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                                <img class="w-44" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div onclick="mobileNav()" class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+        </nav>
+    </header>
+    <nav class="bg-black z-50 h-screen hidden" id="mobileMenu">
+        <div class="p-8  ">
+            <div class="">
+                <div class="">
+                    <ul class="text-center text-3xl text-white space-y-10">
+                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
+                            <a href="facts.html">Anime Quote</a> Quote
+                        </li>
+                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
+                            <a href="members.html">Members</a>
+                        </li>
+                        <li class="border-b-2 border-white pb-2">
+                            <div class="">
+                                <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                                    <img class="w-64" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="p-4 mx-auto h-full">
+    </nav>
+
+    <div class="p-4 mx-auto ">
         <div class="h-full mx-auto">
             <h1 class="text-4xl text-center w-10/12 mx-auto py-32">
-                Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha Ha
+                Azu Sing Muahahaha
             </h1>
-            <div class=" md:hidden">
-                <div class="mx-auto text-center w-48 py-8">
-                    <a href="index.html">
-                        <button class="p-4  font-semibold border-2  text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                        Home
-                        </button>
-                    </a>
-                </div>
-                <div class="flex justify-between">
-                    <div class="my-auto">
-                        <a href="members.html">
-                            <button class="p-4  font-semibold   text-orange-400 text-2xl lg:text-3xl hover:bg-orange-400 hover:text-white rounded-lg ">
-                            Members
-                        </button>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://discord.gg/fqpXWuwtDG">
-                            <button class="text-3xl border-shadow-md shadow-gray-font-bold rounded-lg w-48 p-2">
-                            <img src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                        </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <div class="mx-auto text-center inline">
-            <iframe class="mx-auto h-96 border-2 border-white flex justify-center items-center" src="src/assets/video/Azunda_Singing_Renai_Circulation.mp4" frameborder="0"></iframe>
-        </div>
-        <div class="flex justify-evenly">
-            <div class="text-center mx-auto py-20">
-                <a href="/wynter.html">
-                    <button class="text-3xl bg-white text-gray-700 p-4 rounded-lg text-center mx-auto">
-                        Wynter's Ara Ara 
-                    </button>
-                </a>
-            </div>
-            <div class="mx-auto text-center py-20">
-                <a href="/azu.html">
-                    <button class="text-3xl bg-white text-gray-700 p-4 rounded-lg text-center mx-auto">
-                        Azu Laugh
-                    </button>
-                </a>
-            </div>
+            <iframe class="mx-auto h-96 border-2 border-white flex justify-center items-center"
+                src="src/assets/video/Azunda_Singing_Renai_Circulation.mp4" frameborder="0"></iframe>
         </div>
 
     </div>
     <script>
+        function mobileNav() {
+
+            let mobileMenu = document.getElementById('mobileMenu')
+            mobileMenu.classList.toggle('hidden')
+        }
+
         var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
         if (!isChrome) {
             $('#iframeAudio').remove()
