@@ -15,42 +15,45 @@
     <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
 </head>
 
-<body class="bg-gray-900 text-orange-400 >
-        <nav class=" flex justify-between place-items-center w-11/12 mx-auto ">
-            <div class=" flex place-items-center">
-    <a href="index.html" class="flex place-items-center">
-        <div>
-            <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
-        </div>
-        <div class="text-2xl font-semibold hover:text-orange-500">
-            <span class="text-orange-500 hover:text-white">Nom's </span>Bar
-        </div>
-    </a>
-    </div>
-    <div class="hidden lg:block">
-        <ul class="flex flex-row justify-between place-items-center text-center text-3xl lg:text-2xl text-white ">
-            <li class="noms">
-                <a href="facts.html" class="hover:text-orange-500">Anime
-                    Quote</a>
-            </li>
-            <li class="mx-20">
-                <a href="members.html" class="hover:text-orange-500">Members</a>
-            </li>
-            <li class="">
-                <div class="">
-                    <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
-                        <img class="w-44" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div onclick="mobileNav()" class="lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-    </div>
-    </nav>
+<body class="bg-gray-900 text-orange-400 relative">
+    <header class="w-full bg-black text-gray-50 p-4 ">
+        <nav class="flex justify-between place-items-center w-11/12 mx-auto ">
+            <div class="flex place-items-center">
+                <a href="index.html" class="flex place-items-center">
+                    <div>
+                        <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
+                    </div>
+                    <div class="text-2xl font-semibold hover:text-orange-500">
+                        <span class="text-orange-500 hover:text-white">Nom's </span>Bar
+                    </div>
+                </a>
+            </div>
+            <div class="hidden lg:block">
+                <ul
+                    class="flex flex-row justify-between place-items-center text-center text-3xl lg:text-2xl text-white ">
+                    <li class="noms">
+                        <a href="facts.html" class="hover:text-orange-500">Anime
+                            Quote</a>
+                    </li>
+                    <li class="mx-20">
+                        <a href="members.html" class="hover:text-orange-500">Members</a>
+                    </li>
+                    <li class="">
+                        <div class="">
+                            <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                                <img class="w-44" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div onclick="mobileNav()" class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </div>
+        </nav>
     </header>
     <nav class="bg-black z-50  h-screen hidden" id="mobileMenu">
         <div class="p-8  ">
