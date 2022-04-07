@@ -55,8 +55,8 @@ document.ontouchend = function (e) {
 };
 
 function touchPlayerMove(e) {
-  let x = e.targetTouches[0].clientX - player.offsetWidth / 2;
-  let y = e.targetTouches[0].clientY - player.offsetHeight / 2;
+  let x = e.touches[0].clientX - player.offsetWidth / 2;
+  let y = e.touches[0].clientY - player.offsetHeight / 2;
 
   player.style.left = x + "px";
   player.style.top = y + "px";
