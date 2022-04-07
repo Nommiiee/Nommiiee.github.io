@@ -1,6 +1,13 @@
 let player = document.getElementById("player");
 let boundary = document.getElementById("boundary");
 
+alert(`Click To Start The Game`);
+let startTime = new Date().getTime();
+
+let endTime = function () {
+  return new Date().getTime() - startTime;
+};
+
 document.onmousedown = function (e) {
   playerMove(e);
   document.onmousemove = playerMove;
@@ -34,11 +41,12 @@ document.ontouchstart = function (e) {
 
 document.ontouchend = function (e) {
   // alert("Game Over");
-  // location.reload();
+  location.reload();
   document.ontouchmove = null;
 };
 
 function touchPlayerMove(e) {
+  boundary.innerHTML = `<div class="player" id="player"></div>`;
   let x = e.targetTouches[0].clientX - player.offsetWidth / 2;
   let y = e.targetTouches[0].clientY - player.offsetHeight / 2;
 
@@ -107,7 +115,12 @@ Array.from(enemy).forEach((element) => {
       playerPos.top <= enemyPos.bottom &&
       playerPos.bottom >= enemyPos.top
     ) {
-      alert("Game Over");
+      let playedTime =
+        endTime().toString().slice(0, -3) +
+        `.` +
+        endTime().toString().slice(-3) +
+        ` seconds, The will now reload for the next game`;
+      alert(playedTime);
       location.reload();
       gameState = false;
       clearInterval(gameMove);
