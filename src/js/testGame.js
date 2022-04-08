@@ -104,7 +104,7 @@ function gameFunc() {
     let y = element.offsetTop;
     let vFlag = true;
     let hFlag = true;
-
+    gameMove;
     let gameMove = setInterval(movement, 10);
     let speed = 2;
     function movement() {
