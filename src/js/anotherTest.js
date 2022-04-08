@@ -4,10 +4,8 @@ let boundary = document.getElementById("body");
 // alert(`The game time will start on the first click or touch.`);
 
 let startTime = 0;
-
-let endTime = function () {
-  return new Date().getTime() - startTime;
-};
+alert("The Will Start Once You Click or Touch");
+// function to calculate the time
 
 document.addEventListener(
   "click",
@@ -19,6 +17,13 @@ document.addEventListener(
   },
   { once: true }
 );
+
+function endTime() {
+  let endTime = new Date().getTime();
+  let time = endTime - startTime;
+  console.log(time);
+  return time;
+}
 
 document.addEventListener(
   "touchstart",
@@ -64,6 +69,7 @@ function touchPlayerMove(e) {
   e.preventDefault();
   let x = 0;
   let y = 0;
+  // check whether it's a touch or a mouse
   if (e.touches) {
     x = e.touches[0].clientX - player.offsetWidth / 2;
     y = e.touches[0].clientY - player.offsetHeight / 2;
@@ -78,20 +84,19 @@ function touchPlayerMove(e) {
   // setting the player position
   player.style.transform = `translate(${x}px, ${y}px)`;
 
+  let playWidth = window.innerWidth - player.offsetWidth;
+  let playHeight = window.innerHeight - player.offsetHeight;
+
   // horizontal boundary
-  if (x >= window.innerWidth - player.offsetWidth) {
-    player.style.transform = `translate(${
-      window.innerWidth - player.offsetWidth
-    }px, ${y}px)`;
+  if (x >= playWidth) {
+    player.style.transform = `translate(${playWidth}px, ${y}px)`;
   } else if (x <= 0) {
     player.style.transform = `translate(${zero}px, ${y}px)`;
   }
   // vertical boundary
 
-  if (y >= window.innerHeight - player.offsetHeight) {
-    player.style.transform = `translate(${x}px, ${
-      window.innerHeight - player.offsetHeight
-    }px`;
+  if (y >= playHeight) {
+    player.style.transform = `translate(${x}px, ${playHeight}px`;
   } else if (y <= 0) {
     player.style.transform = `translate(${x}px, ${zero}px)`;
   }
@@ -108,16 +113,26 @@ function gameStart() {
     speed++;
   }, 3000);
   speedChange;
-
   Array.from(enemy).forEach((enemy) => {
     let hFlag = true;
     let vFlag = true;
+    // set the interval for enemy movement
+    let repeat = setInterval(movement, 25);
+    if (gameState) {
+      repeat;
+    } else {
+      clearInterval(repeat);
+    }
+
+    // moving the enemy
     function movement() {
       let enemyPos = enemy.getBoundingClientRect();
       let playerPos = player.getBoundingClientRect();
       let x = enemy.offsetLeft;
       let y = enemy.offsetTop;
+      // if the gamestate is true, the enemy will move
       if (gameState) {
+        // horizontal movement
         if (hFlag) {
           x += speed;
           enemy.style.left = `${x}px`;
@@ -132,6 +147,7 @@ function gameStart() {
           }
         }
 
+        // vertical movement
         if (vFlag) {
           y += speed;
           enemy.style.top = `${y}px`;
@@ -146,24 +162,25 @@ function gameStart() {
           }
         }
 
+        // check for collision
         if (
           playerPos.left <= enemyPos.right &&
           playerPos.right >= enemyPos.left &&
           playerPos.top <= enemyPos.bottom &&
           playerPos.bottom >= enemyPos.top
         ) {
+          let playedTime =
+            endTime().toString().slice(0, -3) +
+            "." +
+            endTime().toString().slice(-3);
+
+          alert(`You lost! Your time was ${playedTime} seconds.`);
           gameState = false;
           clearInterval(repeat);
           clearInterval(speedChange);
           location.reload();
-          startTime = 0;
-          return null;
         }
-      } else if (!gameState) {
-        alert("Game Over");
-        return;
       }
     }
-    let repeat = setInterval(movement, 25);
   });
 }
