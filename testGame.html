@@ -8,6 +8,8 @@
     <title>The Game</title>
     <style>
         body {
+            height: 90vh;
+            overflow: hidden;
             overscroll-behavior: contain;
         }
 
@@ -15,26 +17,26 @@
             position: absolute;
             width: 10vh;
             height: 2vh;
-            bottom: 30%;
+            top: 90%;
             left: 30%;
-            background-color: green;
+            background-color: violet;
         }
 
         #enemy1 {
             position: absolute;
             width: 10vh;
-            height: 15vh;
-            top: 40%;
-            left: 10%;
-            background-color: green;
+            height: 20vh;
+            top: 20%;
+            left: 40%;
+            background-color: blue;
         }
 
         #enemy2 {
             position: absolute;
             width: 5vh;
             height: 10vh;
-            top: 30%;
-            right: 30%;
+            top: 10%;
+            right: 10%;
             background-color: green;
         }
 
@@ -42,38 +44,36 @@
             position: absolute;
             width: 20vh;
             height: 5vh;
-            bottom: 70%;
-            right: 50%;
-            background-color: green;
+            bottom: 30%;
+            right: 30%;
+            background-color: yellow;
         }
 
         #player {
             width: 10vh;
             height: 10vh;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            transform: translate(-50%, -50%);
             background-color: red;
+
         }
     </style>
 </head>
 
-<body>
-    <div class="boundary" id="boundary">
+<body class="" id="body">
 
-        <div class="enemy" id="enemy0"></div>
-        <div class="enemy" id="enemy1"></div>
-        <div class="enemy" id="enemy2"></div>
-        <div class="enemy" id="enemy3"></div>
+    <div class="enemy" id="enemy0"></div>
+    <div class="enemy" id="enemy1"></div>
+    <div class="enemy" id="enemy2"></div>
+    <div class="enemy" id="enemy3"></div>
 
-        <div class="player" id="player">
-            <div class="">
-
-            </div>
+    <div class="player" id="player">
+        <div class="">
 
         </div>
 
     </div>
+
 </body>
 <script src="src/js/testGame.js"></script>
 

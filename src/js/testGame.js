@@ -1,7 +1,7 @@
 let player = document.getElementById("player");
-let boundary = document.getElementById("boundary");
+let boundary = document.getElementById("body");
 
-// alert(`The game time will start on the first click or touch.`);
+alert(`The game time will start on the first click or touch.`);
 
 let startTime = 0;
 
@@ -31,16 +31,29 @@ document.onmouseup = function () {
 function playerMove(e) {
   let x = e.clientX - player.offsetWidth / 2;
   let y = e.clientY - player.offsetHeight / 2;
-  player.style.left = x + "px";
-  player.style.top = y + "px";
-  if (x >= window.innerWidth - player.offsetWidth) {
-    player.style.left = window.innerWidth - player.offsetWidth + "px";
+  let zero = 0;
+  player.style.transform = `translate(${x}px, ${y}px)`;
+
+  // horizontal boundary
+  if (x >= window.innerWidth - player.clientWidth) {
+    player.style.transform = `translate(${
+      window.innerWidth - player.clientWidth
+    }px, ${y}px)`;
+  } else if (x <= 0) {
+    player.style.transform = `translate(${zero}px, ${y}px)`;
   }
-  if (y >= window.innerHeight - player.offsetHeight) {
-    player.style.top = window.innerHeight - player.offsetHeight + "px";
+
+  // VERITCAL BOUNDARY
+  if (y >= window.innerHeight - player.clientHeight) {
+    player.style.transform = `translate(${x}px, ${
+      window.innerHeight - player.clientHeight
+    }px`;
+  } else if (y <= 0) {
+    player.style.transform = `translate(${x}px, ${zero}px)`;
   }
 }
 
+// ------------------------------
 // touch
 
 document.ontouchstart = function (e) {
@@ -57,20 +70,26 @@ document.ontouchend = function (e) {
 function touchPlayerMove(e) {
   let x = e.touches[0].clientX - player.offsetWidth / 2;
   let y = e.touches[0].clientY - player.offsetHeight / 2;
+  let zero = 0;
 
-  player.style.left = x + "px";
-  player.style.top = y + "px";
+  // setting the player position
+  player.style.transform = `translate(${x}px, ${y}px)`;
+
+  // horizontal boundary
   if (x >= window.innerWidth - player.offsetWidth) {
-    player.style.left = window.innerWidth - player.offsetWidth + "px";
+    player.style.transform = `translate(${
+      window.innerWidth - player.offsetWidth
+    }px, ${y}px)`;
+  } else if (x <= 10) {
+    player.style.transform = `translate(${zero}px, ${y}px)`;
   }
-  if (x <= 0) {
-    player.style.left = 0 + "px";
-  }
+
   if (y >= window.innerHeight - player.offsetHeight) {
-    player.style.top = window.innerHeight - player.offsetHeight + "px";
-  }
-  if (y <= 0) {
-    player.style.top = 0 + "px";
+    player.style.transform = `translate(${x}px, ${
+      window.innerHeight - player.offsetHeight
+    }px`;
+  } else if (y <= 0) {
+    player.style.transform = `translate(${x}px, ${zero}px)`;
   }
 }
 
@@ -86,11 +105,7 @@ function gameFunc() {
     let vFlag = true;
     let hFlag = true;
 
-    // player.style.left = 0 + "px";
-    // player.style.top = 0 + "px";
-
     let gameMove = setInterval(movement, 10);
-
     let speed = 2;
     function movement() {
       if (gameState) {
