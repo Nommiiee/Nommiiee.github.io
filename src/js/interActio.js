@@ -17,19 +17,11 @@ document.addEventListener(
   { once: true }
 );
 
-document.addEventListener(
-  "click",
-  function (e) {
-    playerMove(e);
-    document.onmousemove = playerMove;
-  },
-  { passive: false }
-);
-
 document.onmousedown = function (e) {
   e.preventDefault();
-  playerMove(e);
-  document.onmousemove = playerMove;
+  touchPlayerMove(e);
+  console.log();
+  document.onmousemove = touchPlayerMove;
 };
 
 document.onmouseup = function () {
@@ -38,32 +30,31 @@ document.onmouseup = function () {
   // location.reload();
 };
 
-function playerMove(e) {
-  let x = e.clientX - player.offsetWidth / 2;
-  let y = e.clientY - player.offsetHeight / 2;
-  console.log(x, y);
+// function playerMove(e) {
+//   let x = e.clientX - player.offsetWidth / 2;
+//   let y = e.clientY - player.offsetHeight / 2;
 
-  let zero = 0;
-  player.style.transform = `translate(${x}px, ${y}px)`;
+//   let zero = 0;
+//   player.style.transform = `translate(${x}px, ${y}px)`;
 
-  // horizontal boundary
-  if (x >= window.innerWidth - player.clientWidth) {
-    player.style.transform = `translate(${
-      window.innerWidth - player.clientWidth
-    }px, ${y}px)`;
-  } else if (x <= 0) {
-    player.style.transform = `translate(${zero}px, ${y}px)`;
-  }
+//   // horizontal boundary
+//   if (x >= window.innerWidth - player.clientWidth) {
+//     player.style.transform = `translate(${
+//       window.innerWidth - player.clientWidth
+//     }px, ${y}px)`;
+//   } else if (x <= 0) {
+//     player.style.transform = `translate(${zero}px, ${y}px)`;
+//   }
 
-  // VERITCAL BOUNDARY
-  if (y >= window.innerHeight - player.clientHeight) {
-    player.style.transform = `translate(${x}px, ${
-      window.innerHeight - player.clientHeight
-    }px`;
-  } else if (y <= 0) {
-    player.style.transform = `translate(${x}px, ${zero}px)`;
-  }
-}
+//   // VERITCAL BOUNDARY
+//   if (y >= window.innerHeight - player.clientHeight) {
+//     player.style.transform = `translate(${x}px, ${
+//       window.innerHeight - player.clientHeight
+//     }px`;
+//   } else if (y <= 0) {
+//     player.style.transform = `translate(${x}px, ${zero}px)`;
+//   }
+// }
 
 // ------------------------------
 // touch
@@ -81,6 +72,7 @@ document.ontouchstart = function (e) {
 };
 
 document.ontouchend = function (e) {
+  e.preventDefault();
   // alert("Game Over");
   // location.reload();
   document.ontouchmove = null;
@@ -192,7 +184,7 @@ function gameStart() {
         gameState = false;
       }
     }
-    // setInterval(movement, 25);
+    setInterval(movement, 25);
   });
 }
 
