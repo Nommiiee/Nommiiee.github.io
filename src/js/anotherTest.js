@@ -65,11 +65,11 @@ function touchPlayerMove(e) {
   let y = 0;
   // check whether it's a touch or a mouse
   if (e.touches) {
-    x = e.touches[0].clientX - player.offsetWidth / 2;
-    y = e.touches[0].clientY - player.offsetHeight / 2;
+    x = e.touches[0].clientX - player.offsetWidth / 1.1;
+    y = e.touches[0].clientY - player.offsetHeight / 1.1;
   } else if (!e.touches) {
-    x = e.clientX - player.offsetWidth / 2;
-    y = e.clientY - player.offsetHeight / 2;
+    x = e.clientX - player.offsetWidth / 1.1;
+    y = e.clientY - player.offsetHeight / 1.1;
   }
   let zero = 0;
 
@@ -150,7 +150,7 @@ function gameStart() {
         enemyMovement(i);
       }
     }
-
+    let borderWidth = 32;
     function enemyMovement(i) {
       let enemyPos = enemies[i].getBoundingClientRect();
       let playerPos = player.getBoundingClientRect();
@@ -178,8 +178,7 @@ function gameStart() {
         if (!hFlag[i]) {
           x[i] -= speed;
           enemies[i].style.left = `${x[i]}px`;
-          if (x[i] <= -32) {
-            // 32 is the width of the border
+          if (x[i] <= -borderWidth) {
             hFlag[i] = true;
           }
         }
@@ -188,7 +187,7 @@ function gameStart() {
         if (hFlag[i]) {
           x[i] -= speed;
           enemies[i].style.left = `${x[i]}px`;
-          if (x[i] <= -32) {
+          if (x[i] <= -borderWidth) {
             console.log("x");
             hFlag[i] = false;
           }
@@ -207,14 +206,17 @@ function gameStart() {
         if (vFlag[i]) {
           y[i] += speed;
           enemies[i].style.top = `${y[i]}px`;
-          if (y[i] >= body.offsetHeight - enemies[i].offsetHeight) {
+          if (
+            y[i] >=
+            body.offsetHeight - enemies[i].offsetHeight + borderWidth
+          ) {
             vFlag[i] = false;
           }
         }
         if (!vFlag[i]) {
           y[i] -= speed;
           enemies[i].style.top = `${y[i]}px`;
-          if (y[i] <= -32) {
+          if (y[i] <= -borderWidth) {
             vFlag[i] = true;
           }
         }
@@ -224,14 +226,17 @@ function gameStart() {
         if (vFlag[i]) {
           y[i] -= speed;
           enemies[i].style.top = `${y[i]}px`;
-          if (y[i] <= -32) {
+          if (y[i] <= -borderWidth) {
             vFlag[i] = false;
           }
         }
         if (!vFlag[i]) {
           y[i] += speed;
           enemies[i].style.top = `${y[i]}px`;
-          if (y[i] >= body.offsetHeight - enemies[i].offsetHeight) {
+          if (
+            y[i] >=
+            body.offsetHeight - enemies[i].offsetHeight + borderWidth
+          ) {
             vFlag[i] = true;
           }
         }
