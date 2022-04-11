@@ -112,10 +112,10 @@ let gameState = true;
 
 function changeGameState() {
   gameState = false;
-  // location.reload();
   let playedTime =
     endTime().toString().slice(0, -3) + "." + endTime().toString().slice(-3);
   alert(`You played for ${playedTime} seconds.`);
+  location.reload();
 }
 
 let speed = 2;
