@@ -4,7 +4,7 @@ let boundary = document.getElementById("body");
 // alert(`The game time will start on the first click or touch.`);
 
 let startTime = 0;
-alert("The Will Start Once You Click or Touch");
+// alert("The Will Start Once You Click or Touch");
 // function to calculate the time
 
 document.addEventListener(
@@ -56,13 +56,13 @@ document.addEventListener(
   { passive: false }
 );
 
-document.addEventListener(
-  "onmouseup",
-  () => {
-    touchPlayerMove = null;
-  },
-  { passive: false }
-);
+document.onmouseup = function () {
+  document.removeEventListener("mousemove", touchPlayerMove);
+};
+
+// touchPlayerMove(e);
+// document.addEventListener("mousemove", touchPlayerMove, { passive: false });
+
 // ------------------------------
 
 function touchPlayerMove(e) {
@@ -73,38 +73,59 @@ function touchPlayerMove(e) {
   if (e.touches) {
     x = e.touches[0].clientX - player.offsetWidth / 2;
     y = e.touches[0].clientY - player.offsetHeight / 2;
-    console.log(x, y + " touch");
+    // console.log(x, y + " touch");
   } else if (!e.touches) {
     x = e.pageX - player.offsetWidth / 2;
     y = e.pageY - player.offsetHeight / 2;
-    console.log(x, y + " mouse");
+    // console.log(x, y + " mouse");
   }
   let zero = 0;
 
+  player.style.transform = `translate(${zero}px, ${zero}px)`;
+
   // setting the player position
-  player.style.transform = `translate(${x}px, ${y}px)`;
 
-  let playWidth = window.innerWidth - player.offsetWidth;
-  let playHeight = window.innerHeight - player.offsetHeight;
+  let playWidth = getComputedStyle(boundary)
+    .getPropertyValue("width")
+    .split("p")[0];
+  let playHeight = getComputedStyle(boundary)
+    .getPropertyValue("height")
+    .split("p")[0];
 
-  // horizontal boundary
-  if (x >= playWidth) {
-    player.style.transform = `translate(${playWidth}px, ${y}px)`;
-  } else if (x <= 0) {
-    player.style.transform = `translate(${zero}px, ${y}px)`;
+  let playableAreaX = playWidth - player.offsetWidth;
+  let playableAreaY = playHeight - player.offsetHeight;
+
+  player.style.left = `${x}px`;
+  player.style.top = `${y}px`;
+
+  if (x >= playableAreaX) {
+    player.style.left = `${playableAreaX}px`;
+    changeGameState();
+  } else if (x <= zero) {
+    player.style.left = `${zero}px`;
+    changeGameState();
   }
-  // vertical boundary
 
-  if (y >= playHeight) {
-    player.style.transform = `translate(${x}px, ${playHeight}px`;
-  } else if (y <= 0) {
-    player.style.transform = `translate(${x}px, ${zero}px)`;
+  if (y >= playableAreaY) {
+    player.style.top = `${playableAreaY}px`;
+    changeGameState();
+  } else if (y <= zero) {
+    player.style.top = `${zero}px`;
+    changeGameState();
   }
 }
 
 // Enemy Element And Movement
 let enemy = document.getElementsByClassName(`enemy`);
 let gameState = true;
+
+function changeGameState() {
+  gameState = false;
+  // location.reload();
+  let playedTime =
+    endTime().toString().slice(0, -3) + "." + endTime().toString().slice(-3);
+  alert(`You played for ${playedTime} seconds.`);
+}
 
 let speed = 2;
 
@@ -113,74 +134,186 @@ function gameStart() {
     speed++;
   }, 3000);
   speedChange;
-  Array.from(enemy).forEach((enemy) => {
-    let hFlag = true;
-    let vFlag = true;
-    // set the interval for enemy movement
-    let repeat = setInterval(movement, 25);
-    if (gameState) {
-      repeat;
-    } else {
-      clearInterval(repeat);
+
+  let hFlag = [true, true, true, true];
+  let vFlag = [true, true, true, true];
+  let enemies = Array.from(enemy);
+  let x = [
+    enemies[0].offsetLeft,
+    enemies[1].offsetLeft,
+    enemies[2].offsetLeft,
+    enemies[3].offsetLeft,
+  ];
+  let y = [
+    enemies[0].offsetTop,
+    enemies[1].offsetTop,
+    enemies[2].offsetTop,
+    enemies[3].offsetTop,
+  ];
+
+  console.log(x, y);
+
+  if (gameState) {
+    function loopOverEnemies() {
+      for (let i = 0; i < enemies.length; i++) {
+        enemyMovement(i);
+      }
     }
 
-    // moving the enemy
-    function movement() {
-      let enemyPos = enemy.getBoundingClientRect();
+    function enemyMovement(i) {
+      let enemyPos = enemies[i].getBoundingClientRect();
       let playerPos = player.getBoundingClientRect();
-      let x = enemy.offsetLeft;
-      let y = enemy.offsetTop;
-      // if the gamestate is true, the enemy will move
-      if (gameState) {
-        // horizontal movement
-        if (hFlag) {
-          x += speed;
-          enemy.style.left = `${x}px`;
-          if (x >= window.innerWidth - enemy.offsetWidth) {
-            hFlag = false;
-          }
-        } else if (!hFlag) {
-          x -= speed;
-          enemy.style.left = `${x}px`;
-          if (x <= 0) {
-            hFlag = true;
+
+      if (
+        playerPos.left <= enemyPos.right &&
+        playerPos.right >= enemyPos.left &&
+        playerPos.top <= enemyPos.bottom &&
+        playerPos.bottom >= enemyPos.top
+      ) {
+        changeGameState();
+        clearInterval(speedChange);
+        clearInterval(movementRepeat);
+      }
+      // horizontal Movement
+      if (i === 0 || i === 2) {
+        if (hFlag[i]) {
+          x[i] += speed;
+          enemies[i].style.left = `${x[i]}px`;
+          if (x[i] >= window.innerWidth - enemies[i].offsetWidth) {
+            hFlag[i] = false;
           }
         }
 
-        // vertical movement
-        if (vFlag) {
-          y += speed;
-          enemy.style.top = `${y}px`;
-          if (y >= window.innerHeight - enemy.offsetHeight) {
-            vFlag = false;
-          }
-        } else if (!vFlag) {
-          y -= speed;
-          enemy.style.top = `${y}px`;
-          if (y <= 0) {
-            vFlag = true;
+        if (!hFlag[i]) {
+          x[i] -= speed;
+          enemies[i].style.left = `${x[i]}px`;
+          if (x[i] <= -32) {
+            hFlag[i] = true;
           }
         }
+      }
+      if (i === 1 || i === 3) {
+        if (hFlag[i]) {
+          x[i] -= speed;
+          enemies[i].style.left = `${x[i]}px`;
+          if (x[i] <= -32) {
+            console.log("x");
+            hFlag[i] = false;
+          }
+        }
+        if (!hFlag[i]) {
+          x[i] += speed;
+          enemies[i].style.left = `${x[i]}px`;
+          if (x[i] >= window.innerWidth - enemies[i].offsetWidth) {
+            hFlag[i] = true;
+          }
+        }
+      }
 
-        // check for collision
-        if (
-          playerPos.left <= enemyPos.right &&
-          playerPos.right >= enemyPos.left &&
-          playerPos.top <= enemyPos.bottom &&
-          playerPos.bottom >= enemyPos.top
-        ) {
-          let playedTime =
-            endTime().toString().slice(0, -3) +
-            "." +
-            endTime().toString().slice(-3);
+      // vertical movement
+      if (i === 0 || i === 1) {
+        if (vFlag[i]) {
+          y[i] += speed;
+          enemies[i].style.top = `${y[i]}px`;
+          if (y[i] >= window.innerHeight - enemies[i].offsetHeight) {
+            vFlag[i] = false;
+          }
+        }
+        if (!vFlag[i]) {
+          y[i] -= speed;
+          enemies[i].style.top = `${y[i]}px`;
+          if (y[i] <= -32) {
+            vFlag[i] = true;
+          }
+        }
+      }
 
-          alert(`You lost! Your time was ${playedTime} seconds.`);
-          gameState = false;
-          clearInterval(repeat);
-          clearInterval(speedChange);
-          location.reload();
+      if (i === 2 || i === 3) {
+        if (vFlag[i]) {
+          y[i] -= speed;
+          enemies[i].style.top = `${y[i]}px`;
+          if (y[i] <= -32) {
+            vFlag[i] = false;
+          }
+        }
+        if (!vFlag[i]) {
+          y[i] += speed;
+          enemies[i].style.top = `${y[i]}px`;
+          if (y[i] >= window.innerHeight - enemies[i].offsetHeight) {
+            vFlag[i] = true;
+          }
         }
       }
     }
-  });
+    let movementRepeat = setInterval(loopOverEnemies, 10);
+    movementRepeat;
+  }
+
+  // Array.from(enemy).forEach((enemy, idx, Array) => {
+  //   let hFlag = true;
+  //   let vFlag = true;
+
+  //   // set the interval for enemy movement
+  //   let repeat = setInterval(movement, 20);
+  //   if (gameState) {
+  //     repeat;
+  //   } else {
+  //     clearInterval(repeat);
+  //   }
+
+  //   // moving the enemy
+  //   function movement() {
+  //     let enemyMovementWidth = window.innerWidth - enemy.offsetWidth;
+  //     let enemyMovementHeight = window.innerHeight - enemy.offsetHeight;
+  //     let enemyPos = enemy.getBoundingClientRect();
+  //     let playerPos = player.getBoundingClientRect();
+  //     let x = enemy.offsetLeft;
+  //     let y = enemy.offsetTop;
+  //     // if the gamestate is true, the enemy will move
+  //     if (gameState) {
+  //       // horizontal movement
+  //       if (hFlag) {
+  //         x += speed;
+  //         enemy.style.left = `${x}px`;
+  //         if (x >= enemyMovementWidth) {
+  //           hFlag = false;
+  //         }
+  //       } else if (!hFlag) {
+  //         x -= speed;
+  //         enemy.style.left = `${x}px`;
+  //         if (x <= -32) {
+  //           // we are using 32 because the border is 32px wide
+  //           hFlag = true;
+  //         }
+  //       }
+
+  //       // vertical movement
+  //       if (vFlag) {
+  //         y += speed;
+  //         enemy.style.top = `${y}px`;
+  //         if (y >= enemyMovementHeight) {
+  //           vFlag = false;
+  //         }
+  //       } else if (!vFlag) {
+  //         y -= speed;
+  //         enemy.style.top = `${y}px`;
+  //         if (y <= -32) {
+  //           vFlag = true;
+  //         }
+  //       }
+
+  //       // check for collision
+  //       if (
+  //         playerPos.left <= enemyPos.right &&
+  //         playerPos.right >= enemyPos.left &&
+  //         playerPos.top <= enemyPos.bottom &&
+  //         playerPos.bottom >= enemyPos.top
+  //       ) {
+  //         changeGameState();
+  //         clearInterval(repeat);
+  //         clearInterval(speedChange);
+  //       }
+  //     }
+  //   }
+  // });
 }

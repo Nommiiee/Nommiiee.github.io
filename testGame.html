@@ -8,30 +8,40 @@
     <title>The Game</title>
     <style>
         body {
-            background-color: #181818;
+
+            background-color: black;
+            /* border: 1em solid black; */
             top: 0;
             left: 0;
-            height: 100vh;
+            height: 90vh;
             overflow: hidden;
             overscroll-behavior: contain;
             touch-action: none
         }
 
+        #background {
+            border: 2em solid black;
+            position: relative;
+            background-color: white;
+            height: inherit;
+            width: inherit;
+        }
+
         #enemy0 {
             position: absolute;
-            width: 10vh;
-            height: 2vh;
-            top: 90%;
-            left: 30%;
+            width: 12vh;
+            height: 12vh;
+            top: 20%;
+            left: 20%;
             background-color: violet;
         }
 
         #enemy1 {
             position: absolute;
-            width: 10vh;
-            height: 20vh;
+            width: 12vh;
+            height: 10vh;
             top: 20%;
-            left: 40%;
+            right: 20%;
             background-color: blue;
         }
 
@@ -39,8 +49,8 @@
             position: absolute;
             width: 5vh;
             height: 10vh;
-            top: 10%;
-            right: 10%;
+            bottom: 20%;
+            left: 20%;
             background-color: green;
         }
 
@@ -48,8 +58,8 @@
             position: absolute;
             width: 20vh;
             height: 5vh;
-            bottom: 30%;
-            right: 30%;
+            bottom: 20%;
+            right: 20%;
             background-color: yellow;
         }
 
@@ -57,25 +67,33 @@
             width: 10vh;
             height: 10vh;
             position: absolute;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             background-color: red;
 
+        }
+
+        .enemy {
+            transition: all;
         }
     </style>
 </head>
 
 <body class="" id="body">
+    <div class="" id="background">
+        <!-- <canvas id="gameCanvas"></canvas> -->
+        <div class="enemy" id="enemy0"></div>
+        <div class="enemy" id="enemy1"></div>
+        <div class="enemy" id="enemy2"></div>
+        <div class="enemy" id="enemy3"></div>
 
-    <div class="enemy" id="enemy0"></div>
-    <div class="enemy" id="enemy1"></div>
-    <div class="enemy" id="enemy2"></div>
-    <div class="enemy" id="enemy3"></div>
+        <div class="player" id="player">
+            <div class="">
 
-    <div class="player" id="player">
-        <div class="">
+            </div>
 
         </div>
-
     </div>
 
 </body>
