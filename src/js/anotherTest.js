@@ -63,15 +63,15 @@ function touchPlayerMove(e) {
   e.preventDefault();
   let x = 0;
   let y = 0;
+  let zero = 0;
   // check whether it's a touch or a mouse
   if (e.touches) {
-    x = e.touches[0].clientX - player.offsetWidth / 1.1;
-    y = e.touches[0].clientY - player.offsetHeight / 1.1;
+    x = e.touches[0].clientX - player.offsetWidth;
+    y = e.touches[0].clientY - player.offsetHeight;
   } else if (!e.touches) {
-    x = e.clientX - player.offsetWidth / 1.1;
-    y = e.clientY - player.offsetHeight / 1.1;
+    x = e.clientX - player.offsetWidth;
+    y = e.clientY - player.offsetHeight;
   }
-  let zero = 0;
 
   // setting the player position
   player.style.transform = `translate(${zero}px, ${zero}px)`;

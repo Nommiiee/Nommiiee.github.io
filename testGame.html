@@ -30,43 +30,43 @@
 
         #enemy0 {
             position: absolute;
-            width: 12vh;
-            height: 12vh;
-            top: 20%;
-            left: 20%;
-            background-color: violet;
+            width: 8vh;
+            height: 8vh;
+            top: 10%;
+            left: 10%;
+            background-color: navy;
         }
 
         #enemy1 {
             position: absolute;
-            width: 12vh;
-            height: 10vh;
-            top: 20%;
-            right: 20%;
+            width: 8vh;
+            height: 6vh;
+            top: 10%;
+            right: 10%;
             background-color: blue;
         }
 
         #enemy2 {
             position: absolute;
-            width: 5vh;
-            height: 10vh;
-            bottom: 20%;
-            left: 20%;
+            width: 3vh;
+            height: 8vh;
+            bottom: 10%;
+            left: 10%;
             background-color: green;
         }
 
         #enemy3 {
             position: absolute;
-            width: 20vh;
+            width: 10vh;
             height: 5vh;
-            bottom: 20%;
-            right: 20%;
+            bottom: 10%;
+            right: 10%;
             background-color: yellow;
         }
 
         #player {
-            width: 10vh;
-            height: 10vh;
+            width: 8vh;
+            height: 8vh;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -77,6 +77,61 @@
 
         .enemy {
             transition: all;
+        }
+
+        @media only screen and (min-width: 768px) {
+
+
+            #enemy0 {
+                position: absolute;
+                width: 12vh;
+                height: 12vh;
+                top: 20%;
+                left: 20%;
+                background-color: navy;
+            }
+
+            #enemy1 {
+                position: absolute;
+                width: 12vh;
+                height: 8vh;
+                top: 20%;
+                right: 20%;
+                background-color: blue;
+            }
+
+            #enemy2 {
+                position: absolute;
+                width: 5vh;
+                height: 10vh;
+                bottom: 20%;
+                left: 20%;
+                background-color: green;
+            }
+
+            #enemy3 {
+                position: absolute;
+                width: 20vh;
+                height: 5vh;
+                bottom: 20%;
+                right: 20%;
+                background-color: yellow;
+            }
+
+            #player {
+                width: 10vh;
+                height: 10vh;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: red;
+
+            }
+
+            .enemy {
+                transition: all;
+            }
         }
     </style>
 </head>
@@ -98,10 +153,6 @@
     </div>
 
 </body>
-<!-- <script src="src/js/testGame.js"></script> -->
-<!-- <script src="src/js/gameTest2.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> -->
-<!-- <script src="src/js/interActio.js"></script> -->
 <script src="src/js/anotherTest.js"></script>
 
 </html>
