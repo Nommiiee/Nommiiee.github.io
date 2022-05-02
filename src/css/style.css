@@ -6,3 +6,8 @@
   font-family: noms;
   src: url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap");
 }
+
+
+.userCards{
+  height: 500px;
+}
