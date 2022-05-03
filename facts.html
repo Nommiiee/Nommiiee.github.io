@@ -3,32 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Quote</title>
-
+    <link rel="stylesheet" href="src/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.bundled.min.js"></script>
 
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
-<body class="bg-gray-900 text-orange-400  relative">
-    <header class="w-full bg-black text-gray-50 p-4 ">
-        <nav class="flex justify-between place-items-center w-11/12 mx-auto ">
+<body class="bg-gray-900 text-orange-400 relative">
+    <header class="w-full bg-black text-gray-50 p-4 Redressed text-2xl lg:text-3xl">
+        <nav class="flex justify-between place-items-center w-11/12 mx-auto  ">
             <div class="flex place-items-center">
                 <a href="index.html" class="flex place-items-center">
                     <div>
                         <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
                     </div>
-                    <div class="text-2xl font-semibold hover:text-orange-500">
+                    <div class=" font-semibold hover:text-orange-500 ">
                         <span class="text-orange-500 hover:text-white">Nom's </span>Bar
                     </div>
                 </a>
             </div>
             <div class="hidden lg:block">
-                <ul
-                    class="flex flex-row justify-between place-items-center text-center text-3xl lg:text-2xl text-white ">
+                <ul class="flex flex-row justify-between place-items-center text-center  text-white ">
                     <li class="noms">
                         <a href="facts.html" class="hover:text-orange-500">Anime
                             Quote</a>
@@ -53,23 +65,26 @@
             </div>
         </nav>
     </header>
-    <nav class="bg-black z-50  h-screen hidden" id="mobileMenu">
+    <nav class="bg-black z-50 Redressed text-3xl lg:text-4xl h-screen hidden lg:hidden" id="mobileMenu">
         <div class="p-8  ">
             <div class="">
                 <div class="">
-                    <ul class="text-center text-3xl text-white space-y-10">
-                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
-                            <a href="facts.html">Anime Quote</a>
+                    <ul class="flex flex-col justify-end items-end w-full text-white gap-10">
+                        <li class="w-full">
+                            <a class="w-full flex justify-end border-b border-white pb-2 hover:text-orange-500"
+                                href="facts.html">Anime Quote</a>
+
                         </li>
-                        <li class="border-b-2 border-white pb-2 hover:text-orange-500">
-                            <a href="members.html">Members</a>
+                        <li class="w-full">
+                            <a class="w-full flex justify-end border-b border-white pb-2 hover:text-orange-500"
+                                href="members.html">Members</a>
                         </li>
-                        <li class="border-b-2 border-white pb-2">
-                            <div class="">
-                                <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
-                                    <img class="w-64" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                                </a>
-                            </div>
+                        <li class="w-full flex justify-end border-b border-white pb-2">
+
+                            <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
+                                <img class="w-40 " src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
+                            </a>
+
                         </li>
                     </ul>
                 </div>
@@ -77,34 +92,23 @@
         </div>
     </nav>
 
-    <div class="flex justify-center hidden">
-        <div class="text-white w-11/12 lg:w-7/12 text-center">
-            <div class="py-20">
-                <p id="fact" onclick="start()" class="font-serif text-2xl">
-                </p>
-            </div>
-            <div class="">
-                <button onclick="start()" class="bg-white text-gray-800 p-3 text-2xl rounded-lg shadow-white font-bold">
-                    New Fact
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="pt-20">
-        <h1 class="text-center text-4xl font-serif font-semibold text-orange-400">
+
+
+    <div class="py-20">
+        <h1 class="text-center text-4xl lg:text-5xl font-bold text-orange-400 Redressed">
             Random Anime Quotes
         </h1>
     </div>
     <div class="flex justify-center pb-20">
         <div class="w-11/12">
-            <div class="p-8 bg-orange-400 text-gray-800 rounded-lg text-center" id="card">
-                <h1 class="text-3xl underline underline-offset-auto font-semibold" id="aniName">
+            <div class="p-8 bg-orange-400 text-white rounded-lg text-center" id="card">
+                <h1 class="text-3xl lg:text-4xl  underline underline-offset-auto font-semibold Redressed " id="aniName">
                     <span rv-text="name">{name}</span>
                 </h1>
-                <p class="text-2xl italic w-full py-4" id="quote">
+                <p class="text-2xl italic w-full py-4 Lemonada" id="quote">
                     ❝ <span rv-text="quote">{quote}</span> ❞
                 </p>
-                <p class="text-right text-2xl p-4 font-semibold" id="character">
+                <p class="text-right text-2xl p-4 font-semibold Lemonada" id="character">
                     ― ❛<span rv-text="character">{character}</span>❜
                 </p>
             </div>
