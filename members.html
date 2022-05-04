@@ -96,30 +96,30 @@
         </div>
         <div class="flex justify-center items-center pt-14">
             <div class="w-11/12 flex flex-wrap justify-center gap-6 items-center">
-                <div class="w-80 rounded-lg  Lemonada border border-white userCards transform transition-all hover:translate-y-1 hover:scale-95"
+                <div class="w-80 rounded-lg Lemonada border border-white userCards transform transition-all hover:translate-y-3 hover:scale-95"
                     rv-style="user.bgcolor" rv-each-user="data.staff">
                     <div class="p-4 h-full w-full flex flex-col justify-between items-center">
                         <div class="h-full w-full flex flex-col justify-center items-center">
                             <div class="py-10">
-                                <img class="w-24 h-24 object-cover rounded-md" rv-src="user.userImage"
+                                <img class="w-24 h-24 object-cover rounded-lg" rv-src="user.userImage"
                                     src="http://placehold.jp/3d4070/ffffff/150x150.png" alt="">
                             </div>
                             <div rv-style="user.textColor"
                                 class="flex flex-col items-center justify-between w-full h-full text-center text-lg lg:text-xl font-bold">
-                                <p class="py-2" rv-text="user.name">
+                                <p class="" rv-text="user.name">
                                     <!-- NomNom -->
                                 </p>
                                 <p class="" rv-text="user.title">
                                     <!-- The Gatto Lord -->
                                 </p>
-                                <p class=" text-sm lg:text-lg" rv-text="user.quote">
+                                <p class=" text-sm lg:text-lg quotePara" rv-text="user.quote">
                                     <!-- " I Love Gattos, Are You A Gatto?" -->
                                 </p>
                             </div>
                         </div>
                         <div class="w-full text-sm xl:text-lg pt-10 pb-4">
                             <a rv-href="user.btnLink" rv-style="user.btnColor"
-                                class="font-semibold  rounded-md shadow-md w-full py-2 text-white transform transition-all  cardBtns ">
+                                class="rounded-md shadow-md w-full py-2 text-white transform transition-all cardBtns ">
                                 <button class="w-full h-full" rv-text="user.btnText">
                                     <!-- Hello World! -->
                                 </button>
@@ -138,12 +138,12 @@
         </div>
         <div class="flex justify-center items-center pt-14">
             <div class="w-11/12 flex flex-wrap justify-center gap-6 items-center">
-                <div class="w-80 rounded-lg Lemonada border border-white userCards transform transition-all hover:translate-y-1 hover:scale-95"
+                <div class="w-80 rounded-lg Lemonada border border-white userCards transform transition-all hover:translate-y-3 hover:scale-95"
                     rv-style="user.bgcolor" rv-each-user="data.members">
                     <div class="p-4 h-full w-full flex flex-col justify-between items-center">
                         <div class="h-full w-full flex flex-col justify-center items-center">
                             <div class="py-10">
-                                <img class="w-24 h-24 object-cover rounded-md" rv-src="user.userImage"
+                                <img class="w-24 h-24 object-cover rounded-lg" rv-src="user.userImage"
                                     src="http://placehold.jp/3d4070/ffffff/150x150.png" alt="">
                             </div>
                             <div rv-style="user.textColor"
@@ -154,14 +154,14 @@
                                 <p class="" rv-text="user.title">
                                     <!-- The Gatto Lord -->
                                 </p>
-                                <p class=" text-sm lg:text-lg" rv-text="user.quote">
+                                <p class=" text-sm lg:text-lg quotePara" rv-text="user.quote">
                                     <!-- " I Love Gattos, Are You A Gatto?" -->
                                 </p>
                             </div>
                         </div>
                         <div class="w-full text-sm xl:text-lg pt-10 pb-4">
                             <a rv-href="user.btnLink"
-                                class="font-semibold  rounded-md shadow-md w-full py-2 text-white transform transition-all cardBtns"
+                                class=" rounded-md shadow-md w-full py-2 text-white transform transition-all cardBtns"
                                 rv-style="user.btnColor">
                                 <button class="w-full h-full" rv-text="user.btnText">
                                     <!-- Hello World! -->
@@ -188,6 +188,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.bundled.min.js"></script>
 
 <script>
+
     const data = {
         staff: [{
             bgcolor: 'background-color: #fb923c;',
@@ -195,14 +196,14 @@
             userImage: 'src/assets/img/nom.png',
             name: 'NomNom',
             title: "The Gatto Lord",
-            quote: "I Love Gattos, Are You A Gatto?",
+            quote: "Humanity As A Whole Is Stupid",
             btnText: "Gotcha'",
             btnColor: 'background-color: #1f2937;',
             btnLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         },
         {
-            bgcolor: 'background-color: #fde047;',
-            textColor: 'color: #1f2937;',
+            bgcolor: 'background-color: #fcd34d;',
+            textColor: 'color: #101010;',
             userImage: 'src/assets/img/doom.jpg',
             name: 'Doom',
             title: "Adored & Respected Mod",
@@ -239,7 +240,7 @@
             userImage: 'src/assets/img/wyn.png',
             name: 'WynWyn',
             title: "The Cute Blob Mod",
-            quote: `I think I'm gonna die the moment I enter the toilet….`,
+            quote: `I think I'm gonna die the moment I enter the toilet...`,
             btnText: "My Anime Voice",
             btnColor: 'background-color: #1f2937;',
             btnLink: "wynter.html"
@@ -416,6 +417,20 @@
     }
 
     rivets.bind(document.querySelector('body'), { data: data });
+
+
+
+    const quotePara = document.querySelectorAll('.quotePara')
+    quotePara.forEach(element => {
+        // make the fist letter uppercase of every word
+        let txt = element.textContent;
+        let txtArr = txt.split(' ');
+        let newTxt = '';
+        txtArr.forEach(word => {
+            newTxt += word.charAt(0).toUpperCase() + word.slice(1) + ' ';
+        }, this);
+        element.textContent = newTxt;
+    })
 
 </script>
 

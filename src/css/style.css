@@ -7,7 +7,9 @@
   src: url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap");
 }
 
-
+.noms{
+  font-family: 'noms', sans-serif;
+}
 .userCards{
   height: 500px;
 }
