@@ -3,123 +3,126 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nom's Bar</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <title>Kunal Kashyap :: Portfolio</title>
+    <link rel="stylesheet" href="portfolio/src/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
 
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
+        #sneakPeak {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            border: 1cm solid #181818
+        }
 
+        #portfolioSneak {
+            animation: test 1s forwards 1;
+            border: 20px black;
+        }
+
+        #content {
+            animation: opacity 1s forwards 1;
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes test {
+            0% {
+                height: 1px;
+                width: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 2px;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+        @media screen and (min-width: 600px) {}
+
+        @media screen and (min-width: 768px) {}
+
+        @media screen and (min-width: 1024px) {}
+
+        @media screen and (min-width: 1280px) {}
+
+        @media screen and (min-width: 1535px) {}
+    </style>
 </head>
 
-<body class="bg-gray-900 text-orange-400 relative">
-    <header class="w-full bg-black text-gray-50 p-4 Redressed text-2xl lg:text-3xl">
-        <nav class="flex justify-between place-items-center w-11/12 mx-auto  ">
-            <div class="flex place-items-center">
-                <a href="index.html" class="flex place-items-center">
-                    <div>
-                        <img class="rounded-full p-2" src="src/assets/img/noms_bar.gif" alt="">
-                    </div>
-                    <div class=" font-semibold hover:text-orange-500 ">
-                        <span class="text-orange-500 hover:text-white">Nom's </span>Bar
-                    </div>
-                </a>
-            </div>
-            <div class="hidden lg:block">
-                <ul class="flex flex-row justify-between place-items-center text-center  text-white ">
-                    <li class="noms">
-                        <a href="facts.html" class="hover:text-orange-500">Anime
-                            Quote</a>
-                    </li>
-                    <li class="mx-20">
-                        <a href="members.html" class="hover:text-orange-500">Members</a>
-                    </li>
-                    <li class="">
-                        <div class="">
-                            <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
-                                <img class="w-44" src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div onclick="mobileNav()" class="lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </div>
-        </nav>
-    </header>
-    <nav class="bg-black z-50 Redressed text-3xl lg:text-4xl h-screen hidden lg:hidden" id="mobileMenu">
-        <div class="p-8  ">
-            <div class="">
-                <div class="">
-                    <ul class="flex flex-col justify-end items-end w-full text-white gap-10">
-                        <li class="w-full">
-                            <a class="w-full flex justify-end border-b border-white pb-2 hover:text-orange-500"
-                                href="facts.html">Anime Quote</a>
+<body class="">
+    <main class=" w-full h-screen bg-gray-900" id="sneakPeak">
+        <div class="text-white bg-rose-300 flex flex-col justify-center items-center text-center" id="portfolioSneak">
+            <div class="" id="content">
+                <div class="space-y-5 w-full">
+                    <h1 class="text-2xl lg:text-3xl">
+                        Awww, You are too early to see my portfolio.
+                    </h1>
+                    <p class="text-xl lg:text-2xl">
+                        Shhh, I am making something beautiful, I will be back soon.
+                    </p>
+                </div>
+                <div class="text-2xl lg:text-3xl pt-10">
+                    <p class="w-full">
+                        <a href="mailto:kunalkashyp3@gmail.com" class="flex flex-col items-center justify-center">
+                            <p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
 
-                        </li>
-                        <li class="w-full">
-                            <a class="w-full flex justify-end border-b border-white pb-2 hover:text-orange-500"
-                                href="members.html">Members</a>
-                        </li>
-                        <li class="w-full flex justify-end border-b border-white pb-2">
-
-                            <a href="https://discord.gg/TVK48QjvbU" class="flex justify-center">
-                                <img class="w-40 " src="src/assets/img/Discord-Logo+Wordmark-Color.svg" alt="">
-                            </a>
-
-                        </li>
-                    </ul>
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                Connect With Me
+                            </p>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
-    </nav>
+    </main>
 
-
-    <!-- MAIN CONTENT -->
-    <div class="p-4 mx-auto h-full">
-        <div class="h-full mx-auto">
-            <h1 class="text-4xl text-center w-10/12 mx-auto py-10 Redressed font-semibold ">
-                Nom's Bar is a place for people to chat and hang out.
-            </h1>
-        </div>
-        <div class="mx-auto text-center p-4 py-10">
-            <widgetbot class="w-full lg:w-9/12  mx-auto " server="735405122406055978" channel="735405122884206612"
-                height="600">
-            </widgetbot>
-        </div>
-    </div>
-
-
-    <script>
-        function mobileNav() {
-
-            let mobileMenu = document.getElementById('mobileMenu')
-            mobileMenu.classList.toggle('hidden')
-        }
-
-    </script>
-    <script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-        new Crate({
-            server: '735405122406055978', // Nom's Bar
-            channel: '735405122884206612' // #🍻the-bar🍻
-        })
-    </script>
 </body>
+
+
+<script>
+
+
+
+</script>
 
 </html>

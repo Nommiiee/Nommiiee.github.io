@@ -1,11 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    "index.html",
+    "portfolio/src/js/index.js",
+    "portfolio/src/css/style.css",
+  ],
   theme: {
-    extend: {
-      fontFmaily:{
-        noms: "'Crete Round', serif"
-      }
-    },
+    extend: {},
   },
   plugins: [],
-}
+};

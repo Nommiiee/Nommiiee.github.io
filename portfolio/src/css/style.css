@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.orelega{
+    font-family: 'DM Serif Display', serif;
+
+}
+
+@font-face {
+    font-family: 'DM Serif Display', serif;
+    src: url();
+}
+
+.forum{
+    font-family: 'Forum', cursive;
+}
+
+@font-face {
+    font-family: 'Forum', cursive;
+    src: url();
+}
+
+
+.max-w-8xl{
+    width: 104rem;
+}
