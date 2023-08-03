@@ -1,12 +1,3 @@
-const menuBtn = document.querySelectorAll(".menu-btn");
-const navigation = document.querySelector("#navigation");
-
-menuBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    navigation.classList.toggle("-translate-x-full");
-  });
-});
-
 if (window.location.pathname.includes("index.html")) {
   console.log("No Need For Navigation Panel");
 } else {
@@ -106,3 +97,14 @@ type="text" placeholder="search" oninput="filterAvatars(this.value)"></div></div
     });
   }
 }
+
+const menuBtn = document.querySelectorAll(".menu-btn");
+const navigation = document.querySelector("#navigation");
+
+menuBtn.forEach((btn) => {
+  console.log("Menu Loaded");
+  btn.addEventListener("click", () => {
+    navigation.classList.toggle("-translate-x-full");
+    console.log("Menu Button Clicked");
+  });
+});
