@@ -1,5 +1,4 @@
-
-if (window.location.pathname.includes("index.html")) {
+if (document.title == "Avatar Repo :: HomePage") {
   console.log("No Need For Navigation Panel");
 } else {
   const navigationPanel = `<div class="" id="nav">
@@ -109,4 +108,3 @@ menuBtn.forEach((btn) => {
     console.log("Menu Button Clicked");
   });
 });
-
