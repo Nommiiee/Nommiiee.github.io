@@ -852,6 +852,10 @@ video {
   height: 50%;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-4\/6 {
   height: 66.666667%;
 }
@@ -959,6 +963,10 @@ video {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-full {
@@ -2361,6 +2369,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-lg {
