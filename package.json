@@ -4,6 +4,8 @@
   "description": "Portfolio And Project",
   "main": "index.js",
   "scripts": {
+    "build": "npx tailwindcss -i ./vrchat/pages/style.css -o ./vrchat/data/style/tailwind.css --build",
+    "buildCSS": " postcss ./vrchat/data/style/tailwind.css -o ./vrchat/data/style/output.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,10 @@
   },
   "homepage": "https://github.com/Nommiiee/Nommiiee.github.io#readme",
   "devDependencies": {
-    "tailwindcss": "^3.1.3"
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.3.3"
   }
 }

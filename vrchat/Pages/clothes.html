@@ -7,9 +7,12 @@
     <title>Avatar Repo :: Clothing</title>
 
     <link rel="shortcut icon" href="../data/img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../data/output.css">
-    <script src="../rivet.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../data/style/output.css">
+    <script defer src="https://cdn.tailwindcss.com"></script>
+
+    <script  src="../data/JS-Scripts/rivet.js"></script>
+
 
 </head>
 
@@ -17,19 +20,24 @@
     <div class="" id="nav-container">
 
     </div>
+
     <div class="w-full h-screen overflow-y-scroll overflow-x-hidden container-snap px-2 py-2 md:px-6" id="main-section">
 
         <div class="w-full flex flex-wrap justify-center md:justify-start items-center">
             <div class="p-2 md:p-4 lg:p-6 w-11/12 md:w-6/12 lg:w-4/12 xl:w-3/12  " rv-each-clothing="data">
                 <div
                     class="w-full text-gray-700 rounded-lg shadow-lg border-2 overflow-x-hidden hover:-translate-y-2 hover:scale-105 transition-all duration-300 card">
+
+
                     <div class="">
                         <img class="w-full h-64 object-cover"
                             rv-src="clothing.img || https://core.trac.wordpress.org/raw-attachment/ticket/24891/24891.404-not-found.png"
                             alt="avatar image">
                     </div>
                     <div class="p-4 bg-gray-100">
+
                         <p class="text-md font-semibold truncate ">
+
                             Clothing : <span class=" productName">{clothing.name}</span>
                         </p>
                         <div class=" flex justify-between w-full">
@@ -60,9 +68,8 @@
         </div>
     </div>
 
-
+    <script src="../data/JS-Scripts/main.js"></script>
     <script src="../data/JS_FORMAT/clothing.js"></script>
-    <script src="../script.js"></script>
 
 
     <script>
