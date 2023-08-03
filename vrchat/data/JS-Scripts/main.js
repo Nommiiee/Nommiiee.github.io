@@ -75,7 +75,10 @@ if (document.title == "Avatar Repo :: HomePage") {
   navContainer.innerHTML = navigationPanel;
 }
 
-if (document.title == "Avatar Repo :: HomePage") {
+if (
+  document.title == "Avatar Repo :: HomePage" ||
+  document.title == "Avatar Repo :: Clothing Original"
+) {
 } else {
   const mainSection = document.getElementById("main-section");
 
