@@ -92,9 +92,11 @@ type="text" placeholder="search" oninput="filterAvatars(this.value)"></div></div
     const avatarName = document.querySelectorAll(".productName");
     avatarName.forEach((name) => {
       if (name.textContent.toLowerCase().includes(str.toLowerCase())) {
-        name.parentElement.parentElement.parentElement.style.display = "block";
+        name.parentElement.parentElement.parentElement.parentElement.style.display =
+          "block";
       } else {
-        name.parentElement.parentElement.parentElement.style.display = "none";
+        name.parentElement.parentElement.parentElement.parentElement.style.display =
+          "none";
       }
     });
   }
