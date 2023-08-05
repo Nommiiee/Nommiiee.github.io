@@ -83,7 +83,7 @@
 
 
     <script src="../data/JS-Scripts/main.js"></script>
-    <script src="../data/JS_FORMAT/clothing_orignal.js"></script>
+    <!-- <script src="../data/JS_FORMAT/clothing_orignal.js"></script> -->
 
     <script>
         const data = [];
@@ -92,11 +92,9 @@
         });
 
         window.onload = function () {
-            loadData();
-        }
-
-        async function loadData() {
-            data.push(...clothing_orignal)
+            getData("../data/JSON_FORMAT/clothes_original.json").then(avatar => {
+                data.push(...avatar)
+            })
         }
 
         function filterAvatars(str) {

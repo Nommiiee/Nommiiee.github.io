@@ -112,3 +112,9 @@ menuBtn.forEach((btn) => {
     console.log("Menu Button Clicked");
   });
 });
+
+async function getData(URL) {
+  return fetch(URL)
+    .then((res) => res.json())
+    .then((data) => data);
+}

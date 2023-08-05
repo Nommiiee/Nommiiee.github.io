@@ -72,9 +72,9 @@
 
 
 
-    <script src="../data/JS_FORMAT/avatar_original.js"></script>
 
     <script src="../data/JS-Scripts/main.js"></script>
+    <!-- <script src="../data/JS_FORMAT/avatar_original.js"></script> -->
 
     <script>
         const data = [];
@@ -83,11 +83,9 @@
         });
 
         window.onload = function () {
-            loadData();
-        }
-
-        async function loadData() {
-            data.push(...avatar_original)
+            getData("../data/JSON_FORMAT/avatar_original.json").then(avatar => {
+                data.push(...avatar)
+            })
         }
     </script>
 </body>

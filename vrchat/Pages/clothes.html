@@ -69,7 +69,7 @@
     </div>
 
     <script src="../data/JS-Scripts/main.js"></script>
-    <script src="../data/JS_FORMAT/clothing.js"></script>
+    <!-- <script src="../data/JS_FORMAT/clothing.js"></script> -->
 
 
     <script>
@@ -79,11 +79,9 @@
         });
 
         window.onload = function () {
-            loadData();
-        }
-
-        async function loadData() {
-            data.push(...clothing)
+            getData("../data/JSON_FORMAT/clothes.json").then(avatar => {
+                data.push(...avatar)
+            })
         }
 
 
