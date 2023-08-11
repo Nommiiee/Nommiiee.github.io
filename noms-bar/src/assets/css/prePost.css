@@ -2216,6 +2216,10 @@ video {
           background-clip: text;
 }
 
+.bg-center {
+  background-position: center;
+}
+
 .bg-repeat {
   background-repeat: repeat;
 }
@@ -3057,6 +3061,10 @@ video {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
+}
+
+.max-w-8xl{
+  max-width: 96rem;
 }
 
 @media (min-width: 640px) {
