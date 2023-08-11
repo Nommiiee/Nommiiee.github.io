@@ -1,0 +1,247 @@
+{
+    "staff": [{
+        "bgcolor": "background-color: #fb923c;",
+        "textColor": "color: white;",
+        "userImage": "../src/assets/img/nom.png",
+        "name": "NomNom",
+        "title": "The Gatto Lord",
+        "quote": "Humanity As A Whole Is Stupid",
+        "btnText": "Gotcha",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "bgcolor": "background-color: #fcd34d;",
+        "textColor": "color: #101010;",
+        "userImage": "../src/assets/img/doom.jpg",
+        "name": "Doom",
+        "title": "Adored & Respected Mod",
+        "quote": "You're*",
+        "btnText": "Listen To Me",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=6IjuSycXjqM"
+    },
+    {
+        "bgcolor": "background-color: #4169e1;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/zahard.webp",
+        "name": "Zahard",
+        "title": "No NO",
+        "quote": "The Internet is the greatest mistake made by Humanity",
+        "btnText": "Ha Ha Ha Ha",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=6LavEptIHs8"
+    },
+    {
+        "bgcolor": "background-color: #1d4ed8;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/juju.png",
+        "name": "Juix",
+        "title": "The Troublemaker",
+        "quote": "who needs lovers, all i need is my bed",
+        "btnText": "Enjoy",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=3jWRrafhO7M&start=8529"
+    },
+    {
+        "bgcolor": "background-color: #FB7B6B;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/robin.jpg",
+        "name": "Robin",
+        "title": "Prodigy In Programming",
+        "quote": "Talk is cheap. Show me the code.",
+        "btnText": "It Is What It Is",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=zWq65etOM-M"
+    },
+    {
+        "bgcolor": "background-color: #f9a8d4;",
+        "textColor": "color: #1f2937;",
+        "userImage": "../src/assets/img/devil1.jpg",
+        "name": "Devichi",
+        "title": "Just A Cute Girl",
+        "quote": "I am made of cuteness~",
+        "btnText": "Some Cute Stuffs",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=eaqgtimmlJ4"
+    },
+    {
+        "bgcolor": "background-color: #9CA9B8;",
+        "textColor": "color: #1f2937;",
+        "userImage": "../src/assets/img/wyn.png",
+        "name": "WynWyn",
+        "title": "The Cute Blob Mod",
+        "quote": "I think I'm gonna die the moment I enter the toilet...",
+        "btnText": "My Anime Voice",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "wynter.html"
+    },
+    {
+        "bgcolor": "background-color: #713f12;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/bao.jpg",
+        "name": "BaoBao",
+        "title": "Oneee-Tamaaa",
+        "quote": "I'm a nice neighborhood nee-chan",
+        "btnText": "heh",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://youtu.be/qa_c8-YQ2l4"
+    },
+    {
+        "bgcolor": "background-color: #3b82f6;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/kowa.jfif",
+        "name": "Kowa",
+        "title": "The Koala Mod",
+        "quote": "Cute 'quote'...",
+        "btnText": "hehe~",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=KId6eunoiWk"
+    },
+    {
+        "bgcolor": "background-color: #DFF9FD;",
+        "textColor": "color: #374151;",
+        "userImage": "../src/assets/img/floofy.png",
+        "name": "Floofy",
+        "title": "The Bartender",
+        "quote": "Go To Sleep",
+        "btnText": "My Fav",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "bgcolor": "background-color: #c084fc;",
+        "textColor": "color: #1f2937;",
+        "userImage": "../src/assets/img/kanna.png",
+        "name": "Kanna",
+        "title": "The Kanna",
+        "quote": "The Wholesome Mod",
+        "btnText": "Pats Are Nice",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "https://youtu.be/_BSSJi-sHh8"
+    },
+    {
+        "bgcolor": "background-color: #2563eb;",
+        "textColor": "color: #FFFFFF;",
+        "userImage": "../src/assets/img/bobby.png",
+        "name": "Bobbyshuffle",
+        "title": "The Teaser",
+        "quote": "Tease me? I'll make you fall for me if you did~",
+        "btnText": "Tease Me",
+        "btnColor": "background-color: #1f2937;",
+        "btnLink": "bobby.html"
+    }],
+    "members": [
+       
+        {
+            "bgcolor": "background-color: #be185d;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/azu.png",
+            "name": "Azunda",
+            "title": "Aussie Premium Cunt",
+            "quote": "Laugh Like A Maniac",
+            "btnText": "Let's Laugh",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "azu.html"
+        },
+        {
+            "bgcolor": "background-color: #5D3FD3;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/vapor.jpg",
+            "name": "Vapor",
+            "title": "The Pirate",
+            "quote": "Cloudy days are my favourite",
+            "btnText": "You Sure About This?",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://oceana.org/"
+        },
+        {
+            "bgcolor": "background-color: #f472b6;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/yocchi.jpg",
+            "name": "Yocchi",
+            "title": "The Horny One",
+            "quote": "There is a price to pay to achieve anything",
+            "btnText": "hehe XD",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "yocchi.html"
+        },
+        {
+            "bgcolor": "background-color: #8b5cf6;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/jhana.jpg",
+            "name": "Hana",
+            "title": "The Marshmallow",
+            "quote": "Can't Decide A 'name'",
+            "btnText": "Some Music",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://m.youtube.com/watch?v=Df_4SNsQVH4"
+        },
+        {
+            "bgcolor": "background-color: #1f2937;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/r.png",
+            "name": "R, Lost R",
+            "title": "The Lost Wanderer",
+            "quote": "Being lost is an adventure",
+            "btnText": "Wandering",
+            "btnColor": "background-color: #374151;",
+            "btnLink": "https://www.youtube.com/watch?feature=youtu.be&v=UxM5UgpXYM4&app=desktop"
+        },
+        {
+            "bgcolor": "background-color: #ec4899;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/dev.jpg",
+            "name": "DwevDevv",
+            "title": "Most Superior",
+            "quote": "foxgirl fOXGIRL FOXGIRL",
+            "btnText": "Click To Hug Me",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://www.youtube.com/watch?v=S0L1cyGBuKI&ab_channel=Kanauru"
+        },
+        {
+            "bgcolor": "background-color: #3b82f6;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/shiro.jpg",
+            "name": "Shiro",
+            "title": "The Narcissist",
+            "quote": "ZE SHIROOOO",
+            "btnText": "Click To Pat Shiro",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://c.tenor.com/7V_j-EkvLbYAAAAC/nogamenolife-sora.gif"
+        },
+        {
+            "bgcolor": "background: rgb(252,165,165); background: linear-gradient(225deg, rgba(252,165,165,1) 36%, rgba(253,186,116,1) 100%);",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/beetle1.png",
+            "name": "Beetle",
+            "title": "The Sleeper",
+            "quote": "Eyes blue like the Atlantic and I'm going down like the titanic",
+            "btnText": "Atlantic",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://youtu.be/xDFwqJ4F50U"
+        },
+        {
+            "bgcolor": "background-color: #FF69B4;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/sachi.png",
+            "name": "Sachi (we miss you ;-;)",
+            "title": "Pleasure Misstress",
+            "quote": "I love lewd things :3 (may you find peace in the afterlife)",
+            "btnText": "Hai cutie",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://c.tenor.com/JXnpvoo1Se0AAAAC/anime-lewd.gif"
+        },
+        {
+            "bgcolor": "background-color: #CA0C1F;",
+            "textColor": "color: #FFFFFF;",
+            "userImage": "../src/assets/img/fishy.jpg",
+            "name": "Fishy",
+            "title": "NOT smol",
+            "quote": "I've become a professional poop parrot cleaner",
+            "btnText": "How I was as a kid (dog)",
+            "btnColor": "background-color: #1f2937;",
+            "btnLink": "https://youtu.be/_yNzi_IGJJA"
+        }
+    ]
+}
