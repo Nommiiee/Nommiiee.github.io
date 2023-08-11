@@ -1005,6 +1005,10 @@ video {
   width: 100%;
 }
 
+.max-w-7xl {
+  max-width: 80rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -3101,6 +3105,10 @@ video {
       max-width: 1536px;
     }
   }
+}
+
+.first-letter\:absolute::first-letter {
+  position: absolute;
 }
 
 .hover\:-translate-y-2:hover {
