@@ -4,8 +4,12 @@
   "description": "Portfolio And Project",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./vrchat/pages/style.css -o ./vrchat/data/style/tailwind.css --build",
-    "buildCSS": " postcss ./vrchat/data/style/tailwind.css -o ./vrchat/data/style/output.css",
+    "buildBar":"npx tailwindcss -i ./noms-bar/src/assets/css/style.css -o ./noms-bar/src/assets/css/prePost.css --build",
+    "postBar":"postcss ./noms-bar/src/assets/css/prePost.css -o ./noms-bar/src/assets/css/build.css",
+
+    "buildVrc": "npx tailwindcss -i ./vrchat/pages/style.css -o ./vrchat/data/style/tailwind.css --build",
+    "postVrc": " postcss ./vrchat/data/style/tailwind.css -o ./vrchat/data/style/output.css",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
