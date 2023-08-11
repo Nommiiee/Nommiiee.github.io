@@ -7,17 +7,29 @@
     <title>Avatar Repo :: HomePage</title>
     <link rel="shortcut icon" href="./data/img/favicons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./data/style/output.css">
-
-    <script defer src="./data/JS-Scripts/main.js"></script>
-
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <script src="./data/JS-Scripts/rivet.js"> </script>
+
 </head>
 
-<body class="bg-black contaier-snap null">
+<body class="w-full h-screen overflow-hidden contaier-snap bg-slate-900 text-white">
 
-    <div class="absolute h-screen w-full bg-black z-10 transtition-all duration-[2s] ease-in-out" id="NomNomOverLay">
-        <div class="w-full h-full flex items-center justify-center">
-            <div class="text-white w-80 gap-4 text-center text-xl font-medium flex flex-col items-center">
+    <div class="absolute h-screen w-full bg-black z-10 transtition-all duration-[2s] ease-in-out " id="NomNomOverLay">
+        <div class="w-full h-full flex flex-col items-center justify-center gap-10">
+            <div class="w-80 md:w-full text-center">
+                <div class="text-xl md:text-2xl lg:text-3xl">
+                    Total Visits
+                </div>
+                <div class="flex flex-row items-center justify-center pt-8  md:gap-4 w-full text-sm md:text-2xl">
+                    <span class="border-2 border-white w-10 h-10 flex items-center justify-center md:w-14 md:h-14 "
+                        rv-each-number="data.visits">
+                        <span class=" font-bold">{number}</span>
+                    </span>
+                </div>
+            </div>
+            <div class=" w-80  gap-4 text-center text-xl font-medium flex flex-col items-center">
+
                 <div>
                     <p>
                         Original Avatar JSON Data from <a target="_blank" href="https://github.com/vrchivejson"
@@ -61,68 +73,66 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-screen flex flex-wrap text-sm md:text-xl">
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Avatar_Rusk.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class="" href="./Pages/Avatars.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Avatar Page
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Avatar_Foxy.webp" class="object-cover h-full w-full" alt="">
 
 
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/Avatar_Original.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Avatar Original Page
-                    </button>
-                </a>
+    <div class="w-full ">
+        <div class="w-full h-full md:flex md:flex-wrap text-center font-sans font-semibold">
+            <div class="relative w-full h-[25vh] bg-center bg-cover md:w-6/12  md:h-[50vh]"
+                style="background-image:url(./data/img/Avatar_Foxy.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/Avatars.html"
+                        class="text-white text-3xl border border-white py-2 w-10/12 md:w-80 lg:w-96 hover:bg-amber-500 transition-all duration-500">
+                        Avatar
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-[25vh] bg-center bg-cover md:w-6/12 md:h-[50vh]"
+                style="background-image:url(./data/img/Avatar_Rusk.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/Avatar_Original.html"
+                        class="text-white text-3xl border border-white py-2 w-10/12 md:w-80 lg:w-96 hover:bg-amber-500 transition-all duration-500">
+                        Avatar Original
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-[25vh] bg-center bg-cover md:w-6/12 md:h-[50vh]"
+                style="background-image:url(./data/img/Clothing.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/clothes.html"
+                        class="text-white text-3xl border border-white py-2 w-10/12 md:w-80 lg:w-96 hover:bg-amber-500 transition-all duration-500">
+                        Clothing
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-[25vh] bg-center bg-cover md:w-6/12 md:h-[50vh]"
+                style="background-image:url(./data/img/Clothing_Orignal.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/Clothes_Original.html"
+                        class="text-white text-3xl border border-white py-2 w-10/12 md:w-80 lg:w-96 hover:bg-amber-500 transition-all duration-500">
+                        Clothing Original
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Clothing.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/clothes.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Clothing Page
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Clothing_Orignal.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/Clothes_Original.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Clothing Original Page
-                    </button>
-                </a>
-            </div>
-        </div>
+
     </div>
 
-    <script>
 
+    <script src="index.js "></script>
+
+    <script defer>
         const NomNomOverLayer = document.getElementById("NomNomOverLay");
         const NomNomBtn = document.querySelector("#NomNomBtn");
         NomNomBtn.addEventListener("click", () => {
             NomNomOverLayer.classList.add("-translate-y-full");
         });
-
+        rivets.bind(document.querySelector('body'), { data: data });
     </script>
+
 </body>
 
 </html>
