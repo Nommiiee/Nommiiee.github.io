@@ -3107,10 +3107,6 @@ video {
   }
 }
 
-.first-letter\:absolute::first-letter {
-  position: absolute;
-}
-
 .hover\:-translate-y-2:hover {
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3351,8 +3347,8 @@ video {
     display: none;
   }
 
-  .lg\:h-16 {
-    height: 4rem;
+  .lg\:h-14 {
+    height: 3.5rem;
   }
 
   .lg\:h-\[650px\] {
