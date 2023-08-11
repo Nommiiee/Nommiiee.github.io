@@ -33,3 +33,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
+
+.max-w-8xl{
+  max-width: 96rem;
+}
