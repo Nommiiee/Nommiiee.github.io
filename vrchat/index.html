@@ -10,21 +10,53 @@
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     <script src="./data/JS-Scripts/rivet.js"> </script>
+    <style>
+        .counter-items {
+            animation: counter 750ms ease-in-out;
+        }
 
+        @keyframes counter {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #overlay-content {
+            animation: overlay-content 1s ease-in-out;
+        }
+
+        @keyframes overlay-content {
+            0% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+    </style>
 </head>
 
 <body class="w-full h-screen overflow-hidden contaier-snap bg-slate-900 text-white">
 
     <div class="absolute h-screen w-full bg-black z-10 transtition-all duration-[2s] ease-in-out " id="NomNomOverLay">
-        <div class="w-full h-full flex flex-col items-center justify-center gap-10">
+        <div class="w-full h-full flex flex-col items-center justify-center gap-10" id="overlay-content">
             <div class="w-80 md:w-full text-center">
-                <div class="text-xl md:text-2xl lg:text-3xl">
+                <div class="text-xl md:text-2xl lg:text-3xl font-extralight">
                     Total Visits
                 </div>
-                <div class="flex flex-row items-center justify-center pt-8  md:gap-4 w-full text-sm md:text-2xl">
-                    <span class="border-2 border-white w-10 h-10 flex items-center justify-center md:w-14 md:h-14 "
-                        rv-each-number="data.visits">
-                        <span class=" font-bold">{number}</span>
+                <div
+                    class="flex flex-row items-center justify-center pt-8 gap-1 md:gap-4 w-full text-sm md:text-2xl transition-all h-20">
+                    <span
+                        class="counter-items border-2 border-white w-10 h-10 flex items-center justify-center md:w-14 md:h-14 transition-all "
+                        rv-each-number="data.visits.totalVisits">
+                        <span class=" font-bold ">{number}</span>
                     </span>
                 </div>
             </div>
@@ -122,7 +154,7 @@
     </div>
 
 
-    <script src="index.js "></script>
+    <script src="./index.js"></script>
 
     <script defer>
         const NomNomOverLayer = document.getElementById("NomNomOverLay");
@@ -130,7 +162,25 @@
         NomNomBtn.addEventListener("click", () => {
             NomNomOverLayer.classList.add("-translate-y-full");
         });
+
+
         rivets.bind(document.querySelector('body'), { data: data });
+
+        const URI = "https://visitor.cyclic.app/visits/vrchive";
+        fetch(URI, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            return res.json()
+        }).then(visitor => {
+            data.visits = visitor
+            data.visits.totalVisits = data.visits.totalVisits.toString().split("")
+        }).catch(err => {
+            data.visits.totalVisits = ["0", "0", "0", "0", "0",]
+        })
+
     </script>
 
 </body>
