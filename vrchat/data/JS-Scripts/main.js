@@ -50,7 +50,7 @@ const navigationPanel = `<div class="" id="nav">
             <span>Clothing</span>
         </a>
         <a class="p-4 border-b-2 border-white w-full flex item-center gap-2 hover:bg-amber-500 hover:text-black hover:border-amber-500 font-medium transtition-all duration-500 lg:justify-center"
-            href="./shaders.html">
+            href="./Shaders.html">
             <span class="lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -61,7 +61,7 @@ const navigationPanel = `<div class="" id="nav">
             <span>Shaders</span>
         </a>
         <a class="p-4 border-b-2 border-white w-full flex item-center gap-2 hover:bg-amber-500 hover:text-black hover:border-amber-500 font-medium transtition-all duration-500 lg:justify-center"
-            href="./textures.html">
+            href="./Textures.html">
             <span class="lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -79,8 +79,8 @@ const navigationPanel = `<div class="" id="nav">
 </button>
 </div>`;
 
-    const navContainer = document.getElementById("nav-container");
-    navContainer.innerHTML = navigationPanel;
+const navContainer = document.getElementById("nav-container");
+navContainer.innerHTML = navigationPanel;
 
 if (document.title == "Avatar Repo :: HomePage") {
 } else {
