@@ -39,7 +39,7 @@ const navigationPanel = `<div class="" id="nav">
             <span>Avatar</span>
         </a>
         <a class="p-4 border-b-2 border-white w-full flex item-center gap-2 hover:bg-amber-500 hover:text-black hover:border-amber-500 font-medium transtition-all duration-500 lg:justify-center"
-            href="./clothes.html">
+            href="./Clothes.html">
             <span class="lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
