@@ -9,13 +9,9 @@
 
 
     <link rel="stylesheet" href="../data/style/output.css">
-
-
-
-
     <script src="../data/JS-Scripts/rivet.js"></script>
 
-    <!-- <script defer src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script defer src="https://cdn.tailwindcss.com"></script>   -->
 
 
 </head>
@@ -27,10 +23,10 @@
     </div>
 
 
-    <div class="w-full h-screen overflow-y-scroll overflow-x-hidden container-snap px-2 py-2 md:px-6" id="main-section">
+    <div class="w-full h-screen overflow-y-scroll overflow-x-hidden  px-2 py-2 md:px-6" id="main-section">
 
         <div class="w-full flex flex-wrap justify-center md:justify-start items-center">
-            <div class="p-2 md:p-4 lg:p-6 w-11/12 md:w-6/12 lg:w-4/12 xl:w-3/12  " rv-each-avatar="data">
+            <div class="p-2 md:p-4 lg:p-6 w-11/12 md:w-6/12 lg:w-4/12 xl:w-3/12 " rv-each-avatar="data">
                 <div
                     class=" text-gray-700 rounded-lg shadow-lg border-2 overflow-x-hidden hover:-translate-y-2 hover:scale-105 transition-all duration-300 card">
 
@@ -42,7 +38,8 @@
                     <div class="p-4 bg-gray-100">
 
                         <p class="text-lg font-semibold truncate">
-                            Avatar Name : <span class=" productName">{avatar.name}</span>
+
+                            Avatar Name : <span class="productName">{avatar.name}</span>
                         </p>
                         <div class="flex justify-between w-full">
 
@@ -75,21 +72,24 @@
 
 
     <script src="../data/JS-Scripts/main.js"></script>
-    <!-- <script src="../data/JS_FORMAT/avatar.js"></script> -->
-
-
     <script>
+
         const data = [];
         rivets.bind(document.querySelector('body'), {
             data: data
         });
+
         window.onload = function () {
-            getData("../data/JSON_FORMAT/avatar.json").then(avatar => {
+            getData("./fetch/premium-base.json").then(avatar => {
                 data.push(...avatar)
+            }).then(() => {
+                getData("./fetch/premium-furry-base.json").then(avatar => {
+                    data.push(...avatar)
+                })
+            }).catch(err => {
+                console.log(err);
             })
         }
-
-
     </script>
 </body>
 
