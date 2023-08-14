@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avatar Repo :: HomePage</title>
-    <link rel="shortcut icon" href="./data/img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./data/style/output.css">
+    <link rel="shortcut icon" href="./data/src/img/favicons/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="./data/src/styling/style.css">
+    <link rel="stylesheet" href="./data/src/styling/output.css">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-    <!-- <script defer src="./data/JS-Scripts/main.js"></script> -->
-
-    <script src="./data/JS-Scripts/rivet.js"> </script>
+    <script src="./data/src/scripts/rivet.js"> </script>
 
     <style>
         .counter-items {
@@ -67,15 +67,17 @@
     </style>
 </head>
 
-<body class="bg-slate-900 text-white">
-    <div class="absolute w-full bg-black z-10 transtition-all duration-[2s] ease-in-out " id="NomNomOverLay">
-        <div class="flex flex-col items-center justify-center gap-10" id="overlay-content">
+<body class="bg-slate-900 text-white ">
+    <div class="absolute w-full bg-cover bg-center z-10 transtition-all duration-[1s] ease-in-out " id="NomNomOverLay"
+        style="background-image: url(data/src/img/overlay.webp);">
+
+        <div class="flex flex-col items-center justify-center gap-10 bg-black bg-opacity-60" id="overlay-content">
             <div class="w-80 md:w-full text-center flex flex-col gap-4 items-center justify-center">
                 <div class="text-2xl lg:text-3xl font-extralight">
                     Visits
                 </div>
                 <!-- if you want to add back the image coutner, just remove the hidden class and add it to the div with id="text-counter" -->
-                <div class="w-80 md:w-96 flex items-center justify-center counter-items h-36" id="image-counter">
+                <div class="w-80 md:w-96 flex items-center justify-center counter-items h-36 " id="image-counter">
                     <img class="w-full " src="https://count.nett.moe/get/hina_vrchive_visit_counter/img?theme=rule34"
                         alt="counter image">
                 </div>
@@ -89,7 +91,7 @@
                 </div>
 
             </div>
-            <div class="w-80 gap-4 text-center text-xl font-medium flex flex-col items-center relative -top-6">
+            <div class=" w-80 gap-4 text-center text-xl font-medium flex flex-col items-center relative -top-6">
                 <div>
                     <p>
                         Original Data from <br><a target="_blank" href="https://github.com/vrchivejson"
@@ -134,55 +136,54 @@
         </div>
     </div>
 
-
-    <div class="w-full h-screen overflow-y-scroll" id="container">
+    <div class="w-full h-screen overflow-y-scroll xl:container-snap xl:overflow-hidden" id="container">
         <div
             class="w-full h-full text-center font-sans font-semibold text-white text-xl md:text-2xl xl:flex xl:flex-row">
             <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
-                style="background-image:url(./data/img/assets.webp);">
+                style="background-image:url(./data/src/img/assets.webp);">
                 <div
                     class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
-                    <a href="./Pages/Assets.html"
+                    <a href="./Pages/vr-assets/"
                         class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
                         Assets
                     </a>
                 </div>
             </div>
             <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
-                style="background-image:url(./data/img/Avatar_Foxy.webp);">
+                style="background-image:url(./data/src/img/Avatar_Foxy.webp);">
                 <div
                     class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
-                    <a href="./Pages/Avatars.html"
+                    <a href="./Pages/avatars/"
                         class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
                         Avatars
                     </a>
                 </div>
             </div>
             <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
-                style="background-image:url(./data/img/Clothing.webp);">
+                style="background-image:url(./data/src/img/Clothing.webp);">
                 <div
                     class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
-                    <a href="./Pages/Clothes.html"
+                    <a href="./Pages/clothes/"
                         class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
                         Clothing
                     </a>
                 </div>
             </div>
             <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
-                style="background-image:url(./data/img/shaders.webp);">
+                style="background-image:url(./data/src/img/shaders.webp);">
                 <div
                     class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
-                    <a href="./Pages/Shaders.html"
+                    <a href="./Pages/shaders/"
                         class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
                         Shaders
                     </a>
                 </div>
             </div>
             <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
-                style="background-image:url(./data/img/textures.webp);">
+                style="background-image:url(./data/src/img/textures.webp);">
                 <div
                     class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
-                    <a href="./Pages/Textures.html"
+                    <a href="./Pages/textures/"
                         class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
                         Textures
                     </a>
