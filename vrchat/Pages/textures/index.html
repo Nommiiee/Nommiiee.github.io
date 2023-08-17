@@ -44,10 +44,13 @@
                         <div class="">
                             <img class="w-full h-64 object-cover" loading="lazy"
                                 rv-src="textures.img || https://core.trac.wordpress.org/raw-attachment/ticket/24891/24891.404-not-found.png"
-                                alt="shadetexturesrs image">
+                                alt="textures image">
                         </div>
                         <div class="p-4 flex flex-col gap-4 productName">
                             <div class="flex flex-col gap-1">
+                                <p class="opacity-0 absolute scale-0">
+                                    {textures.id}
+                                </p>
                                 <p class="truncate text-base">
                                     Texture: <span
                                         class=" text-lg font-medium textureName item-name">{textures.name}</span>
