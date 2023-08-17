@@ -85,21 +85,18 @@ navContainer.innerHTML = navigationPanel;
 if (document.title == "Avatar Repo :: HomePage") {
 } else {
   const mainSection = document.getElementById("main-section");
-
   const searchBar = ` <div class="serach py-4 w-full flex items-center justify-center px-4"><div class="w-full"><input class="py-2 px-4 rounded-sm shadow-sm  text-lg font-medium bg-gray-100 text-gray-800 w-full focus:outline-none"
 type="text" placeholder="search" oninput="filterAvatars(this.value)"></div></div>`;
 
   mainSection.innerHTML = searchBar + mainSection.innerHTML;
-
   function filterAvatars(str) {
     const avatarName = document.querySelectorAll(".productName");
     avatarName.forEach((name) => {
+      console.log(name);
       if (name.textContent.toLowerCase().includes(str.toLowerCase())) {
-        name.parentElement.parentElement.parentElement.parentElement.style.display =
-          "block";
+        name.parentElement.parentElement.style.display = "block";
       } else {
-        name.parentElement.parentElement.parentElement.parentElement.style.display =
-          "none";
+        name.parentElement.parentElement.style.display = "none";
       }
     });
   }
@@ -120,4 +117,26 @@ async function getData(URL) {
   return fetch(URL)
     .then((res) => res.json())
     .then((data) => data);
+}
+
+function backToTop() {
+  // smooth scroll to the top of the page
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+function copyIdToClipboard(element) {
+  const ID = element.parentElement.id;
+  const itemName =
+    element.parentElement.parentElement.querySelector(".item-name").textContent;
+
+  if (ID == "") {
+    alert("This item has no ID");
+    return;
+  } else {
+    navigator.clipboard.writeText(ID);
+    alert(`Copied ${itemName} ID to clipboard`);
+  }
 }

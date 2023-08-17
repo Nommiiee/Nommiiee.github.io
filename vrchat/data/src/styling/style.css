@@ -13,3 +13,28 @@
     scrollbar-width: none; /* Firefox */
   }
 
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: black;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track{
+    background: #181818;
+
+}
+
+/* handle */
+::-webkit-scrollbar-thumb{
+    background: #FFFFFF;
+}
+
+.max-w-8xl{
+    max-width: 96rem;
+}
+
+body{
+    scroll-behavior: smooth;
+}
