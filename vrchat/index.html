@@ -5,28 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avatar Repo :: HomePage</title>
-    <link rel="shortcut icon" href="./data/img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./data/style/output.css">
+    <link rel="shortcut icon" href="./data/src/img/favicons/favicon.ico" type="image/x-icon">
 
-    <script defer src="./data/JS-Scripts/main.js"></script>
+    <link rel="stylesheet" href="./data/src/styling/style.css">
+    <link rel="stylesheet" href="./data/src/styling/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="./data/src/scripts/rivet.js"> </script>
+
+    <style>
+        .counter-items {
+            animation: counter 720ms ease-in-out;
+        }
+
+        @keyframes counter {
+            0% {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+
+
+        @keyframes overlay-content {
+            0% {
+                opacity: 0;
+                transform: translateY(-10%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        #NomNomOverLay {
+
+            height: inherit;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #overlay-content {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
 
-<body class="bg-black contaier-snap null">
+<body class="bg-slate-900 text-white ">
+    <div class="absolute w-full bg-cover bg-center z-10 transtition-all duration-[1s] ease-in-out " id="NomNomOverLay"
+        style="background-image: url(data/src/img/overlay.webp);">
 
-    <div class="absolute h-screen w-full bg-black z-10 transtition-all duration-[2s] ease-in-out" id="NomNomOverLay">
-        <div class="w-full h-full flex items-center justify-center">
-            <div class="text-white w-80 gap-4 text-center text-xl font-medium flex flex-col items-center">
+        <div class="flex flex-col items-center justify-center gap-10 bg-black bg-opacity-60" id="overlay-content">
+            <div class="w-80 md:w-full text-center flex flex-col gap-4 items-center justify-center">
+                <div class="text-2xl lg:text-3xl font-extralight">
+                    Visits
+                </div>
+                <!-- if you want to add back the image coutner, just remove the hidden class and add it to the div with id="text-counter" -->
+                <div class="w-80 md:w-96 flex items-center justify-center counter-items h-36 " id="image-counter">
+                    <img class="w-full " src="https://count.nett.moe/get/hina_vrchive_visit_counter/img?theme=rule34"
+                        alt="counter image">
+                </div>
+                <div class="w-full h-20 flex flex-wrap items-center justify-center gap-x-1 md:gap-x-4 md:text-lg lg:text-2xl font-mono hidden"
+                    id="text-counter">
+                    <span
+                        class="counter-items border-2 border-white w-10 h-10 flex items-center justify-center md:w-14 md:h-14 transition-all "
+                        rv-each-number="data.visits.totalVisits">
+                        <span class="font-bold">{number}</span>
+                    </span>
+                </div>
+
+            </div>
+            <div class=" w-80 gap-4 text-center text-xl font-medium flex flex-col items-center relative -top-6">
                 <div>
                     <p>
-                        Original Avatar JSON Data from <a target="_blank" href="https://github.com/vrchivejson"
+                        Original Data from <br><a target="_blank" href="https://github.com/vrchivejson"
                             class="text-teal-200">
                             vrchivejson GitHub Repo
                         </a>
                     </p>
-                    <p class="py-4">
-                        All Pages Made by <span class="text-amber-500 text-2xl">Nommiiee</span>
+                    <p class="pt-4">
+                        Frontend By : <span class="text-amber-500 text-2xl">Nommiiee</span>
                     </p>
                 </div>
                 <div class="flex justify-center gap-x-4 scale-110">
@@ -56,76 +130,102 @@
                 </div>
                 <button id="NomNomBtn"
                     class="w-full py-2 px-8 border-2 border-white text-white text-xl font-medium hover:bg-amber-500 hover:text-black transtition-all duration-500">
-                    Click Me!
+                    Click Me To Continue
                 </button>
-            </div>
-        </div>
-    </div>
-    <div class="w-full h-screen flex flex-wrap text-sm md:text-xl">
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Avatar_Rusk.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class="" href="./Pages/Avatars.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Avatar Page
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Avatar_Foxy.webp" class="object-cover h-full w-full" alt="">
-
-
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/Avatar_Original.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Avatar Original Page
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Clothing.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/clothes.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Clothing Page
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="relative  w-6/12 h-3/6 flex items-center justify-center ">
-            <img src="./data/img/Clothing_Orignal.webp" class="object-cover h-full w-full" alt="">
-            <div
-                class="absolute flex items-center justify-center w-full h-full bg-black bg-opacity-70 hover:bg-opacity-20 transtition-all duration-500 ease-in-out">
-                <a class=" " href="./Pages/Clothes_Original.html">
-                    <button
-                        class="w-48 md:w-64 text-white border-4 border-white px-4 py-2 hover:bg-black hover:bg-opacity-50  hover:border-amber-500">
-                        Clothing Original Page
-                    </button>
+                <a href="https://vrchive.nomieze.com" target="_blank" rel="noreferrer"
+                    class="text-center border border-white bg-amber-500 p-2 font-medium  hover:text-gray-900 hover:-translate-y-1 transition-all duration-300 w-full text-black">
+                    VRChive New Website
                 </a>
             </div>
         </div>
     </div>
 
-    <script>
+    <div class="w-full h-screen overflow-y-scroll xl:container-snap xl:overflow-hidden" id="container">
+        <div
+            class="w-full h-full text-center font-sans font-semibold text-white text-xl md:text-2xl xl:flex xl:flex-row">
+            <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
+                style="background-image:url(./data/src/img/assets.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/vr-assets/"
+                        class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
+                        Assets
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
+                style="background-image:url(./data/src/img/Avatar_Foxy.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/avatars/"
+                        class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
+                        Avatars
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
+                style="background-image:url(./data/src/img/Clothing.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/clothes/"
+                        class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
+                        Clothing
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
+                style="background-image:url(./data/src/img/shaders.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/shaders/"
+                        class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
+                        Shaders
+                    </a>
+                </div>
+            </div>
+            <div class="relative w-full h-2/5 bg-cover bg-center xl:h-full xl:w-[20%]"
+                style="background-image:url(./data/src/img/textures.webp);">
+                <div
+                    class="w-full h-full flex items-center justify-center bg-black bg-opacity-70 hover:bg-opacity-50 transition-all duration-1000 ease-in-out">
+                    <a href="./Pages/textures/"
+                        class=" border border-white py-2 w-10/12 md:w-80 lg:w-80 hover:bg-amber-500 transition-all duration-500">
+                        Textures
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <script src="./index.js"></script>
+
+    <script defer>
         const NomNomOverLayer = document.getElementById("NomNomOverLay");
         const NomNomBtn = document.querySelector("#NomNomBtn");
-
-
-
         NomNomBtn.addEventListener("click", () => {
             NomNomOverLayer.classList.add("-translate-y-full");
         });
 
+
+        rivets.bind(document.querySelector('body'), { data: data });
+
+        const URI = "https://visitor.cyclic.app/visits/vrchive";
+        fetch(URI, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            return res.json()
+        }).then(visitor => {
+            data.visits = visitor
+            data.visits.totalVisits = data.visits.totalVisits.toString().split("")
+        }).catch(err => {
+            data.visits.totalVisits = ["0", "0", "0", "0", "0",]
+        })
+
     </script>
+
 </body>
 
 </html>
