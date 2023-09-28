@@ -1005,6 +1005,10 @@ video {
   width: 100%;
 }
 
+.max-w-7xl {
+  max-width: 80rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -3343,8 +3347,8 @@ video {
     display: none;
   }
 
-  .lg\:h-16 {
-    height: 4rem;
+  .lg\:h-14 {
+    height: 3.5rem;
   }
 
   .lg\:h-\[650px\] {
